@@ -9232,7 +9232,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   position: relative;
   background: url(../img/intro-carousel/audi1.jpg) center no-repeat;
+<<<<<<< HEAD
 
+=======
+  background-size: cover;
+>>>>>>> 98ffe0225a413efb4abf2731e5724ed2afe52253
   padding: 200px 0 120px 0;
   top:0px;
 }
@@ -9289,14 +9293,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .hero-content .btn-banner {
+<<<<<<< HEAD
   background: #cc7007;
   border: 2px solid #cc7007;
+=======
+  background: #07cc91;
+  border: 2px solid #07cc91;
+>>>>>>> 98ffe0225a413efb4abf2731e5724ed2afe52253
   border-radius: 30px;
 }
 
 #hero .hero-content .btn-banner:hover {
   background: none;
+<<<<<<< HEAD
   color: #cc7007;
+=======
+  color: #07cc91;
+>>>>>>> 98ffe0225a413efb4abf2731e5724ed2afe52253
 }
 
 #hero .hero-content .btn-projects {
@@ -9571,7 +9584,11 @@ Inner Banner
 #innerBanner{
 	padding: 138px 0 64px;
 	text-align:center;
+<<<<<<< HEAD
 	background: #3582dc;
+=======
+	background: #278bf2;
+>>>>>>> 98ffe0225a413efb4abf2731e5724ed2afe52253
 }
 #innerBanner h2{
 	color:#fff;

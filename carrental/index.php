@@ -50,7 +50,11 @@ error_reporting(0);
             <?php   if(strlen($_SESSION['login'])==0)
             { 
               ?>
+<<<<<<< HEAD
               <a href="#loginform" data-toggle="modal" data-dismiss="modal" class="btn-banner" align="center">Login / Register</a>
+=======
+              <a href="#loginform" data-toggle="modal" data-dismiss="modal" class="btn-banner">Login / Register</a> 
+>>>>>>> 98ffe0225a413efb4abf2731e5724ed2afe52253
               <?php 
             }?>
          </div>
