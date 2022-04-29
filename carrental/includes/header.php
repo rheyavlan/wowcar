@@ -2,12 +2,13 @@
   <div class="container">
 
     <div id="logo" class="pull-left">
-     <h1><a href="index.html" id="body" class="scrollto"><span style="color: red;">Car</span>Rental</a></h1> 
-     <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+    
+     <h1><a href="index.html" id="body" class="scrollto"><img src="wow.jpg" width="150" height="60"> &nbsp; <span style="color: orange;"><b>Car Rental</b></span></a></h1>
    </div>
    <div class="pull-left ml-4">
     <!-- SEARCH FORM -->
-    <form class="form-inline "  action="search.php" method="post">
+    <!-- <form class="form-inline "  action="search.php" method="post">
+   
       <div class="input-group input-group-sm">
         <input class="form-control form-control-navbar" type="text"  name="searchdata" placeholder="Search Car" aria-label="Search" required="true">
         <div class="input-group-append">
@@ -16,18 +17,23 @@
           </button>
         </div>
       </div>
-    </form>
+
+    </form> -->
+
+
   </div>
 
 
   <nav id="nav-menu-container">
     <ul class="nav-menu">
-      <li class="menu-active"><a href="index.php">Home</a></li>
-      <li><a href="about.php">About Us</a></li>
-      <li><a href="car_list.php">Car list</a></li>
-      <li><a href="contact.php">Contact</a></li>
-      <li><a href="portfolio.php">Gallery</a></li>
-      <li><a href="admin">Admin</a></li>
+
+      <li class="menu-active"><a href="index.php"><span style="color: orange;">Home</span></a></li>
+      <li><a href="about.php"><span style="color: orange;">About Us</span></a></li>
+      <li><a href="car_list.php"><span style="color: orange;">Car list</span></a></li>
+      <li><a href="contact.php"><span style="color: orange;">Contact</span></a></li>
+      <li><a href="portfolio.php"><span style="color: orange;">Gallery</span></a></li>
+      <li><a href="admin"><span style="color: orange;">Admin</span></a></li>
+
       <?php   if(strlen($_SESSION['login'])!=0)
       { 
         ?>
@@ -43,7 +49,9 @@
           foreach($results as $result)
           {
             ?>
-            <li class="menu-has-children"><a href=""><?php echo htmlentities($result->FullName);?></a>
+
+            <li class="menu-has-children"><a href=""><span style="color: orange;"><?php echo htmlentities($result->FullName);?></span></a>
+
               <ul>
                 <li><a href="profile.php">Profile Settings</a></li>
                 <li><a href="update_password.php">Update Password</a></li>
