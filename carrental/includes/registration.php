@@ -83,6 +83,15 @@ return true;
                   <input type="email" class="form-control" name="emailid" id="emailid" onBlur="checkAvailability()" placeholder="Email Address" required="required">
                    <span id="user-availability-status" style="font-size:12px;"></span> 
                 </div>
+                
+                <div class="form-group">
+                 <p>Customer Type</p>
+                   <input type="radio" id="html" name="cust_type" value="Individual">
+                   <label for="individual">Individual</label><br>
+                   <input type="radio" id="css" name="cust_type" value="Corporate">
+                   <label for="css">Corporate</label><br>
+               </div>
+
                 <div class="form-group">
                   <input type="password" class="form-control" name="password" placeholder="Password" required="required">
                 </div>

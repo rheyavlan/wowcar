@@ -9578,18 +9578,18 @@ Inner Banner
 	padding: 138px 0 64px;
 	text-align:center;
 
-	background: #3582dc;
+	background: black;
 
 }
 #innerBanner h2{
-	color:#fff;
+	color:orange;
 	text-align:center;
 	font-weight:normal;
 	font-size:18px;
 	margin:0px;
 }
 #innerBanner h2 span{
-	color: #00e5a1;
+	color: orange;
 	font-weight:bold;
 	font-size:38px;
 	text-align:center;

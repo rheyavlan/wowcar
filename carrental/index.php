@@ -68,8 +68,9 @@ error_reporting(0);
       <section id="services">
         <div class="container">
           <div class="section-header">
-            <h2>Find the Best Car for you</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+            
+          <h2>WOW car rental company. </h2>
+           <p>WOW has many locations at various airports, towns, and cities in the United States. </p>
           </div>
 
           <div class="row">
@@ -110,34 +111,16 @@ error_reporting(0);
       </div>
     </section><!-- #services -->
 
-    <!--==========================
-      Clients Section
-      ============================-->
-      <section id="clients" class="wow fadeInUp">
-        <div class="container">
-          <div class="section-header">
-            <h2>Clients</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
-          </div>
-
-          <div class="owl-carousel clients-carousel">
-            <img src="img/clients/client-1.png" alt="">
-            <img src="img/clients/client-2.png" alt="">
-            <img src="img/clients/client-3.png" alt="">
-            <img src="img/clients/client-4.png" alt="">
-            <img src="img/clients/client-5.png" alt="">
-            <img src="img/clients/client-6.png" alt="">
-          </div>
-
-        </div>
-      </section><!-- #clients --> 
+  
    
       <section id="call-to-action" class="wow fadeInUp">
         <div class="container">
           <div class="row">
             <div class="col-lg-9 text-center text-lg-left">
-              <h3 class="cta-title">Get Our Service</h3>
-              <p class="cta-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h3 class="cta-title">WOW services</h3>
+             <p class="cta-text">Wow has various classes of vehicle such as small car, mid-size car, luxury car, SUV, Premium SUV, MiniVan, and Station Wagon etc.
+             At present, WOW does not provide vehicle insurance to their customers for car rental service and customers need to bring his/her own insurance
+             </p>
             </div>
             <div class="col-lg-3 cta-btn-container text-center">
               <a class="cta-btn align-middle" href="contact.php">Contact Us</a>

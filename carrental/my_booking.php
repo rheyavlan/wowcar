@@ -169,9 +169,10 @@ else{
     <div class="container">
       <div class="row">
         <div class="col-lg-9 text-center text-lg-left">
-          <h3 class="cta-title">Get Our Service</h3>
-          <p class="cta-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
+        <h3 class="cta-title">WOW services</h3>
+        <p class="cta-text">Wow has various classes of vehicle such as small car, mid-size car, luxury car, SUV, Premium SUV, MiniVan, and Station Wagon etc.
+             At present, WOW does not provide vehicle insurance to their customers for car rental service and customers need to bring his/her own insurance
+             </p>        </div>
         <div class="col-lg-3 cta-btn-container text-center">
           <a class="cta-btn align-middle" href="#contact">Contact Us</a>
         </div>

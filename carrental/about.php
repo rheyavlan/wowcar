@@ -50,18 +50,23 @@ error_reporting(0);
         <div class="container"> 
           <div class="row">
             <div class="col-lg-6 about-img">
-              <img src="img/nissan.jpg" alt="">
+              <img src="img/Rolls_Royce.jpeg" alt="">
             </div>
 
             <div class="col-lg-6 content">
-              <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
-              <h3>Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus ovident</h3>
-              <p>Consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. malis nulla duis fugiat</p>
-              <ul>
-                <li><i class="icon ion-ios-checkmark-outline"></i> Dolores quae porro consequatur aliquam, incidunt fugiat culpa.</li>
-                <li><i class="icon ion-ios-checkmark-outline"></i> Dolores quae porro consequatur aliquam, culpa esse aute nulla.</li>
-                <li><i class="icon ion-ios-checkmark-outline"></i> Dolores quae porro esse aute nulla. malis nulla duis fugiat</li>
-              </ul> 
+            <h2>WOW Car Rental Services</h2>
+             <ul>
+               <li><i class="icon ion-ios-checkmark-outline"></i> WOW occasionally mails discount coupons to their customers and also mails such discount coupons to neighborhood residents.
+               WOW, provides discounts to their individual customers who bring in such a coupon at thetimeof renting a vehicle.
+               Such discount coupons carry validity dates and percentage of discount offered</li>
+               <li><i class="icon ion-ios-checkmark-outline"></i> WOW provides discount to corporate customers on
+               fixed corporate discount set for affiliated corporate companies</li>
+               <li><i class="icon ion-ios-checkmark-outline"></i> Each class has its own rental rate per day of the rental service and fees for
+               over mileage(if rental service exceeds odometer limits/day).</li>
+               <li><i class="icon ion-ios-checkmark-outline"></i> At present, WOW does not provide vehicle insurance to their
+               customers for car rentalserviceand customers need to bring his/her own insurance</li>
+             </ul>
+
             </div>
           </div>
 
