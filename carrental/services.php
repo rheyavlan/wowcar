@@ -34,7 +34,7 @@
  <?php include('includes/header.php');?>
  <section id="innerBanner"> 
   <div class="inner-content">
-    <h2><span>Services</span><br>We create the opportunities!</h2>
+    <h2><span>Services</span><br>Car rental for your best moments</h2>
     <div> 
     </div>
   </div> 

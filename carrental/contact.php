@@ -53,7 +53,7 @@ error_reporting(0);
       <section id="contact" class="wow fadeInUp">
         <div class="container">
           <div class="section-header"> 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+            <p>You can reach out to us for any queries</p>
           </div>
 
           <div class="row contact-info">
@@ -61,17 +61,17 @@ error_reporting(0);
             <div class="contact-address">
               <i class="ion-ios-location-outline"></i>
               <h3>Address</h3>
-              <address>AG-12 Street, Luthuli Avenue, California</address>
+              <address>NYU Tandon School of Engineering</address>
             </div> 
             <div class="contact-phone">
               <i class="ion-ios-telephone-outline"></i>
               <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">+1 2885 65590 12</a></p>
+              <p><a href="tel:+155895548855">+1 646-997-3600</a></p>
             </div> 
             <div class="contact-email">
               <i class="ion-ios-email-outline"></i>
               <h3>Email</h3>
-              <p><a href="mailto:info@example.com">code4berryteam@gmail.com</a></p>
+              <p><a href="mailto:engineering.gradinfo@nyu.edu">engineering.gradinfo@nyu.edu</a></p>
             </div> 
           </div>
           <div class="col-lg-7">

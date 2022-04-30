@@ -38,7 +38,7 @@ error_reporting(0);
  <?php include('includes/header.php');?>
  <section id="innerBanner"> 
   <div class="inner-content">
-    <h2><span>Car Listing</span><br>We provide high quality cars!</h2>
+    <h2><span>Car Listing</span><br>A rental service for all-wheel lovers</h2>
     <div> 
     </div>
   </div> 

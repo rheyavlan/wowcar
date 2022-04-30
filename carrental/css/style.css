@@ -9232,7 +9232,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   position: relative;
   background: url(../img/intro-carousel/audi1.jpg) center no-repeat;
-
+  background-color: black;
 
 
   padding: 200px 0 120px 0;
@@ -9998,19 +9998,19 @@ p.help-block li {
 /* Call To Action Section
 --------------------------------*/
 #call-to-action {
-  background: #278bf2;
+  background: orange;
   background-size: cover;
   padding: 40px 0;
 }
 
 #call-to-action .cta-title {
-  color: #fff;
+  color: black;
   font-size: 28px;
   font-weight: 700;
 }
 
 #call-to-action .cta-text {
-  color: #fff;
+  color: black;
 }
 
 @media (min-width: 769px) {
@@ -10031,8 +10031,8 @@ p.help-block li {
   border-radius: 3px;
   transition: 0.5s;
   margin: 10px;
-  border: 3px solid #fff;
-  color: #fff;
+  border: 3px solid black;
+  color: black;
 }
 
 #call-to-action .cta-btn:hover {
@@ -10228,7 +10228,7 @@ p.help-block li {
 }
 
 #contact .form button[type="submit"] {
-  background: #07cc91;
+  background: orange;
   border: 0;
   border-radius: 3px;
   padding: 10px 30px;
@@ -10238,7 +10238,7 @@ p.help-block li {
 }
 
 #contact .form button[type="submit"]:hover {
-  background: #0299c4;
+  background: black;
 }
 
 /*--------------------------------------------------------------
