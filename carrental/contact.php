@@ -38,7 +38,7 @@ error_reporting(0);
  <?php include('includes/header.php');?>
  <section id="innerBanner"> 
   <div class="inner-content">
-    <h2><span>Contact</span><br>We simplify your journey!</h2>
+    <h2><span>Contact</span><br>A rental service for all-wheel lovers</h2>
     <div> 
     </div>
   </div> 

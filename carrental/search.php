@@ -93,7 +93,7 @@ error_reporting(0);
                   <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear);?> model</li>
                   <li><i class="fa fa-car" aria-hidden="true"></i><?php echo htmlentities($result->FuelType);?></li>
                 </ul>
-                <a href="car_details.php?vhid=<?php echo htmlentities($result->id);?>" class="btn" style="background-color: #49a3ff;">View Details <span class="angle_arrow"><i class="fa fa-angle-right" style="color: #49a3ff; "  aria-hidden="true"></i></span></a>
+                <a href="car_details.php?vhid=<?php echo htmlentities($result->id);?>" class="btn" style="background-color: orange">View Details <span class="angle_arrow"><i class="fa fa-angle-right" style="color: black "  aria-hidden="true"></i></span></a>
               </div>
             </div>
             <?php 
