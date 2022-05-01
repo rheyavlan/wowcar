@@ -49,7 +49,7 @@ error_reporting(0);
       <div class="container">
         <div class="section-header">
          
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <p>WOW provides a wide range of cars from different categories as listed below---</p>
         </div>
       </div>
 
