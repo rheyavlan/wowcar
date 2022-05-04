@@ -60,7 +60,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#brand" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">Brand management</span>
+                <span class="menu-title">Car Brand management</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-archive menu-icon"></i>
             </a>
@@ -78,7 +78,7 @@
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="register_car.php">register car</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="register_car.php">Register a Car</a></li>
                     <li class="nav-item"> <a class="nav-link" href="manage_car.php">Manage Cars</a></li>
                 </ul>
             </div>

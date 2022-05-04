@@ -1876,11 +1876,11 @@ sup {
   top: -.5em; }
 
 a {
-  color: #007bff;
+  color: orange;
   text-decoration: none;
   background-color: transparent; }
   a:hover {
-    color: #0056b3;
+    color: orange;
     text-decoration: underline; }
 
 a:not([href]):not([class]) {
@@ -6018,8 +6018,8 @@ input[type="button"].btn-block {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff; }
+  background-color: orange;
+  border-color: orange; }
 
 .page-item.disabled .page-link {
   color: #6c757d;
@@ -9997,7 +9997,7 @@ a.text-secondary:hover, .list-wrapper a.remove:hover, a.text-secondary:focus, .l
   color: #9f9595 !important; }
 
 .text-success {
-  color: #1bcfb4 !important; }
+  color: orange !important; }
 
 a.text-success:hover, a.text-success:focus {
   color: #128b79 !important; }
