@@ -44,7 +44,7 @@ if(isset($_POST['submit']))
                         <div class="col-12">
                             <div class="card">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" style="float: left;">Company details</h5>
+                                    <h5 class="modal-title" style="float: left;">Corporation details</h5>
                                 </div>
 
                                 <div class="card-body">
@@ -85,13 +85,13 @@ if(isset($_POST['submit']))
                                                 <div>&nbsp;</div>
                                                 <div class="row">
                                                     <div class="form-group row col-md-6">
-                                                        <label class="col-12" for="register1-username">Company name:</label>
+                                                        <label class="col-12" for="register1-username">Corporation name:</label>
                                                         <div class="col-12">
                                                             <input type="text" class="form-control" name="companyname" value="<?php  echo $row->companyname;?>" >
                                                         </div>
                                                     </div>
                                                     <div class="form-group row col-md-6">
-                                                        <label class="col-12" for="register1-email">Company reg no.:</label>
+                                                        <label class="col-12" for="register1-email">Registration number of the corporation.:</label>
                                                         <div class="col-12">
                                                             <input type="text" class="form-control" name="regno" value="<?php  echo $row->regno;?>" required='true'  >
                                                         </div>
@@ -99,14 +99,14 @@ if(isset($_POST['submit']))
                                                 </div>
                                                 <div class="row">
                                                     <div class="form-group row col-md-6">
-                                                      <label class="col-12" for="register1-email">physical address:
+                                                      <label class="col-12" for="register1-email">Corporation address:
                                                       </label>
                                                       <div class="col-12">
                                                         <input type="text" class="form-control" name="companyaddress" value="<?php  echo $row->companyaddress;?>" placeholder="Enter company address" required='true'  >
                                                     </div>
                                                 </div>
                                                 <div class="form-group row col-md-6">
-                                                    <label class="col-12" for="register1-email">Company email:</label>
+                                                    <label class="col-12" for="register1-email">Corporation email:</label>
                                                     <div class="col-12">
                                                         <input type="text" class="form-control" name="companyemail" value="<?php  echo $row->companyemail;?>" required='true' >
                                                     </div>
@@ -114,7 +114,7 @@ if(isset($_POST['submit']))
                                             </div>
                                             <div class="row"> 
                                                 <div class="form-group row col-md-6">
-                                                    <label class="col-12" for="register1-password">country:</label>
+                                                    <label class="col-12" for="register1-password">Country:</label>
                                                     <div class="col-12">
                                                         <input type="text" class="form-control" name="country" value="<?php  echo $row->country;?>" required='true' >
                                                     </div>
@@ -131,7 +131,7 @@ if(isset($_POST['submit']))
                                         }
                                     } ?>
                                     <br>
-                                    <button type="submit" name="submit" class="btn btn-primary btn-fw mr-2" style="float: left;">update</button>
+                                    <button type="submit" name="submit" class="btn btn-primary btn-fw mr-2" style="float: left;">Update</button>
                                 </form>
                             </div>
                         </div>
