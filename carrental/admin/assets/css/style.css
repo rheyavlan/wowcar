@@ -9985,10 +9985,10 @@ button.bg-dark:focus {
   color: #ffffff !important; }
 
 .text-primary, .list-wrapper .completed .remove {
-  color: #b66dff !important; }
+  color: orange !important; }
 
 a.text-primary:hover, .list-wrapper .completed a.remove:hover, a.text-primary:focus, .list-wrapper .completed a.remove:focus {
-  color: #9021ff !important; }
+  color: orange !important; }
 
 .text-secondary, .list-wrapper .remove {
   color: #c3bdbd !important; }
@@ -11790,14 +11790,14 @@ code {
 /* gradient buttons */
 .btn-gradient-primary {
   background: -webkit-gradient(linear, left top, right top, from(#da8cff), to(#9a55ff));
-  background: linear-gradient(to right, #da8cff, #9a55ff);
+  background: linear-gradient(to right, orange, black);
   border: 0;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease; }
   .btn-gradient-primary:not([disabled]):not(.disabled):active, .btn-gradient-primary:not([disabled]):not(.disabled).active,
   .show > .btn-gradient-primary.dropdown-toggle {
     background: -webkit-gradient(linear, left top, right top, from(#da8cff), to(#9a55ff));
-    background: linear-gradient(to right, #da8cff, #9a55ff); }
+    background: linear-gradient(to right, orange, black); }
   .btn-gradient-primary:hover {
     opacity: .8; }
   .btn-gradient-primary:not(.btn-gradient-light) {
@@ -11807,14 +11807,14 @@ code {
 
 .btn-gradient-secondary {
   background: -webkit-gradient(linear, left top, right top, from(#e7ebf0), to(#868e96));
-  background: linear-gradient(to right, #e7ebf0, #868e96);
+  background: linear-gradient(to right, orange,black);
   border: 0;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease; }
   .btn-gradient-secondary:not([disabled]):not(.disabled):active, .btn-gradient-secondary:not([disabled]):not(.disabled).active,
   .show > .btn-gradient-secondary.dropdown-toggle {
     background: -webkit-gradient(linear, left top, right top, from(#e7ebf0), to(#868e96));
-    background: linear-gradient(to right, #e7ebf0, #868e96); }
+    background: linear-gradient(to right, orange, black); }
   .btn-gradient-secondary:hover {
     opacity: .8; }
   .btn-gradient-secondary:not(.btn-gradient-light) {
@@ -11824,14 +11824,14 @@ code {
 
 .btn-gradient-success {
   background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(#07cdae));
-  background: linear-gradient(to right, #84d9d2, #07cdae);
+  background: linear-gradient(to right, orange, black);
   border: 0;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease; }
   .btn-gradient-success:not([disabled]):not(.disabled):active, .btn-gradient-success:not([disabled]):not(.disabled).active,
   .show > .btn-gradient-success.dropdown-toggle {
     background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(#07cdae));
-    background: linear-gradient(to right, #84d9d2, #07cdae); }
+    background: linear-gradient(to right, orange, black); }
   .btn-gradient-success:hover {
     opacity: .8; }
   .btn-gradient-success:not(.btn-gradient-light) {
@@ -11841,7 +11841,7 @@ code {
 
 .btn-gradient-info {
   background: -webkit-gradient(linear, left top, right top, from(#90caf9), color-stop(99%, #047edf));
-  background: linear-gradient(to right, #90caf9, #047edf 99%);
+  background: linear-gradient(to right, orange, black 99%);
   border: 0;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease; }
