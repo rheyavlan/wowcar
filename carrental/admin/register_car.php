@@ -10,6 +10,8 @@ if(isset($_POST['save']))
   $fueltype=$_POST['fueltype'];
   $modelyear=$_POST['modelyear'];
   $seatingcapacity=$_POST['seatingcapacity'];
+  $veh_odo_lim=$_POST['veh_odo_lim'];
+  $veh_om_fees=$_POST['veh_om_fees'];
   $vimage1=$_FILES["img1"]["name"];
   $vimage2=$_FILES["img2"]["name"];
   $vimage3=$_FILES["img3"]["name"];
@@ -33,7 +35,7 @@ if(isset($_POST['save']))
   move_uploaded_file($_FILES["img4"]["tmp_name"],"img/vehicleimages/".$_FILES["img4"]["name"]);
   move_uploaded_file($_FILES["img5"]["tmp_name"],"img/vehicleimages/".$_FILES["img5"]["name"]);
 
-  $sql="INSERT INTO tblvehicles(VehiclesTitle,VehiclesBrand,VehiclesOverview,PricePerDay,FuelType,ModelYear,SeatingCapacity,Vimage1,Vimage2,Vimage3,Vimage4,Vimage5,AirConditioner,PowerDoorLocks,AntiLockBrakingSystem,BrakeAssist,PowerSteering,DriverAirbag,PassengerAirbag,PowerWindows,CDPlayer,CentralLocking,CrashSensor,LeatherSeats) VALUES(:vehicletitle,:brand,:vehicleoverview,:priceperday,:fueltype,:modelyear,:seatingcapacity,:vimage1,:vimage2,:vimage3,:vimage4,:vimage5,:airconditioner,:powerdoorlocks,:antilockbrakingsys,:brakeassist,:powersteering,:driverairbag,:passengerairbag,:powerwindow,:cdplayer,:centrallocking,:crashcensor,:leatherseats)";
+  $sql="INSERT INTO tblvehicles(VehiclesTitle,VehiclesBrand,VehiclesOverview,PricePerDay,FuelType,ModelYear,SeatingCapacity,veh_odo_lim,veh_om_fees,Vimage1,Vimage2,Vimage3,Vimage4,Vimage5,AirConditioner,PowerDoorLocks,AntiLockBrakingSystem,BrakeAssist,PowerSteering,DriverAirbag,PassengerAirbag,PowerWindows,CDPlayer,CentralLocking,CrashSensor,LeatherSeats) VALUES(:vehicletitle,:brand,:vehicleoverview,:priceperday,:fueltype,:modelyear,:seatingcapacity,:veh_odo_lim,:veh_om_fees,:vimage1,:vimage2,:vimage3,:vimage4,:vimage5,:airconditioner,:powerdoorlocks,:antilockbrakingsys,:brakeassist,:powersteering,:driverairbag,:passengerairbag,:powerwindow,:cdplayer,:centrallocking,:crashcensor,:leatherseats)";
   $query = $dbh->prepare($sql);
   $query->bindParam(':vehicletitle',$vehicletitle,PDO::PARAM_STR);
   $query->bindParam(':brand',$brand,PDO::PARAM_STR);
@@ -42,6 +44,8 @@ if(isset($_POST['save']))
   $query->bindParam(':fueltype',$fueltype,PDO::PARAM_STR);
   $query->bindParam(':modelyear',$modelyear,PDO::PARAM_STR);
   $query->bindParam(':seatingcapacity',$seatingcapacity,PDO::PARAM_STR);
+  $query->bindParam(':veh_odo_lim',$veh_odo_lim,PDO::PARAM_STR);
+  $query->bindParam(':veh_om_fees',$veh_om_fees,PDO::PARAM_STR);
   $query->bindParam(':vimage1',$vimage1,PDO::PARAM_STR);
   $query->bindParam(':vimage2',$vimage2,PDO::PARAM_STR);
   $query->bindParam(':vimage3',$vimage3,PDO::PARAM_STR);
@@ -136,6 +140,14 @@ if(isset($_POST['save']))
                       <div class="form-group col-md-3">
                         <label for="exampleInputName1">Seating Capacity<span style="color:red">*</span></label>
                         <input type="text" name="seatingcapacity" value="" class="form-control" id="price"required>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label for="exampleInputName1">Vehicle Odometer Limit<span style="color:red">*</span></label>
+                        <input type="text" name="veh_odo_lim" value="" class="form-control" id="price"required>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label for="exampleInputName1">Vehicle OverMileage Fees<span style="color:red">*</span></label>
+                        <input type="text" name="veh_om_fees" value="" class="form-control" id="price"required>
                       </div>
                       <div class="form-group col-md-3">
                         <label for="exampleInputName1">Select Fuel Type<span style="color:red">*</label>
