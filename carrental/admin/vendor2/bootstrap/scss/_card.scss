@@ -37,6 +37,8 @@
   flex: 1 1 auto;
   padding: $card-spacer-x;
   color: $card-color;
+  background-color: $card-background-color;
+
 }
 
 .card-title {
@@ -161,6 +163,7 @@
       margin-right: $card-deck-margin;
       margin-bottom: 0; // Override the default
       margin-left: $card-deck-margin;
+      background-color: orange;
     }
   }
 }

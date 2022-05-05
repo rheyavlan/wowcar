@@ -54,13 +54,13 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="dashboard.php">
-                <span class="menu-title">Dashboard</span>
+                <span class="menu-title">WoW Car Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#brand" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">Brand management</span>
+                <span class="menu-title">Brand Management</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-archive menu-icon"></i>
             </a>
@@ -78,14 +78,14 @@
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="register_car.php">register car</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="manage_car.php">Manage Cars</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="register_car.php">Register a new Car</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="manage_car.php">Manage Registered Cars</a></li>
                 </ul>
             </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#bookings" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">Car Bookings</span>
+                <span class="menu-title">Car Bookings Status</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-briefcase-check menu-icon"></i>
             </a>
@@ -100,13 +100,13 @@
 
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#companymanagement" aria-expanded="false" aria-controls="general-pages">
-                <span class="menu-title">Company management</span>
+                <span class="menu-title">Corporation management</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-bank menu-icon"></i>
             </a>
             <div class="collapse" id="companymanagement">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="companyprofile.php">Company profile </a></li>
+                    <li class="nav-item"> <a class="nav-link" href="companyprofile.php">Corporation profile </a></li>
                 </ul>
             </div>
         </li>
@@ -115,6 +115,19 @@
                 <span class="menu-title">Manage Subscribers</span>
                 <i class="mdi mdi-account-check menu-icon"></i>
             </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="general-pages">
+                <span class="menu-title">Discount management</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-square-inc-cash menu-icon"></i>
+            </a>
+            <div class="collapse" id="discountmanagement">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link">Individual Discount</a></li>
+                    <li class="nav-item"> <a class="nav-link">Corporate Discount</a></li>
+                </ul>
+            </div>
         </li>
         <?php
         $aid=$_SESSION['odmsaid'];
