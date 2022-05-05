@@ -358,19 +358,18 @@ if(isset($_POST['submit']))
                 </div>
                 <div class="form-group">
                   <textarea rows="4" class="form-control" name="message" placeholder="Message" required></textarea>
-                </div>
-                <para> checking changes </para> 
+                </div> 
                 <div class="form-group">
                   <label for="pickup">Pick-up Location:</label>
                   <select name="pickup" id="pickup">
-                    <option value="">--Choose a Pickup Loaction--</option>
+                    <option value="">--Choose a Pickup Location--</option>
                     <option value="NYC">New York City, New York</option>
                     <option value="BUF">Buffalo, New York</option>
                     <option value="LA">Los Angeles, Claifornia</option>
                     <option value="CHI">Chicago, Illinois</option>
                     <option value="HOU">Houston, Texas</option>
-                    <option value="SND">San Diego, Californai</option>
-                    <option value="CMB">Columbus Ohio</option>
+                    <option value="SND">San Diego, California</option>
+                    <option value="CMB">Columbus, Ohio</option>
                     <option value="STL">Seattle, Washington</option>
                     <option value="BST">Boston, Massachusettes</option>
                     <option value="JRS">Jersey City, New Jersey</option>
@@ -378,7 +377,7 @@ if(isset($_POST['submit']))
                   <div class="form-group">
                   <label for="pickup">Drop-off Location:</label>
                   <select name="dropoff" id="dropoff">
-                    <option value="">--Choose a Drop-Off Loaction--</option>
+                    <option value="">--Choose a Drop-Off Location--</option>
                     <option value="NYC">New York City, New York</option>
                     <option value="BUF">Buffalo, New York</option>
                     <option value="LA">Los Angeles, Claifornia</option>
