@@ -163,7 +163,7 @@ if(isset($_POST['submit']))
                     <div class="listing_detail_wrap"> 
                       <!-- Nav tabs -->
                       <ul class="nav nav-tabs gray-bg" role="tablist">
-                        <li role="presentation" class="active"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" style="background-color: #49a3ff;" data-toggle="tab">Vehicle Overview </a></li>
+                        <li role="presentation" class="active"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" style="background-color: black;" data-toggle="tab">Vehicle Overview </a></li>
 
                         <li role="presentation"><a href="#accessories" aria-controls="accessories" role="tab" data-toggle="tab">Accessories</a></li>
                       </ul>
@@ -377,7 +377,7 @@ if(isset($_POST['submit']))
                 <?php if($_SESSION['login'])
                 {?>
                   <div class="form-group">
-                    <input type="submit" class="btn" style="background-color: #49a3ff;"  name="submit" value="Book Now">
+                    <input type="submit" class="btn" style="background-color: orange;"  name="submit" value="Book Now">
                   </div>
                   <?php 
                 } else { ?>
