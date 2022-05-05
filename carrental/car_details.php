@@ -359,6 +359,7 @@ if(isset($_POST['submit']))
                 <div class="form-group">
                   <textarea rows="4" class="form-control" name="message" placeholder="Message" required></textarea>
                 </div>
+                <para> checking changes </para> 
                 <div class="form-group">
                   <label for="pickup">Pick-up Location:</label>
                   <select name="pickup" id="pickup">
