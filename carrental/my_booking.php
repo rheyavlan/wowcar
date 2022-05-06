@@ -100,7 +100,7 @@ else{
                         ?>
 
                         <li>
-                          <h4 style="color:red">Booking No. &nbsp;<?php echo htmlentities($result->BookingNumber);?></h4>
+                          <h4 style="color:orange">Booking No. &nbsp;<?php echo htmlentities($result->BookingNumber);?></h4>
                           <div class="vehicle_img"> <a href="car_details.php?vhid=<?php echo htmlentities($result->vid);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" alt="image"></a> </div>
                           <div class="vehicle_title">
 
@@ -129,7 +129,7 @@ else{
 
                     </li>
 
-                    <h5 style="color:blue">Invoice</h5>
+                    <h5 style="color:black">Invoice</h5>
                     <table>
                       <tr>
                         <th>Car Name</th>

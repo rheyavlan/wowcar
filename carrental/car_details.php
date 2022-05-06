@@ -100,7 +100,7 @@ if(isset($_POST['submit']))
         <div class="container">
           <div class="section-header">
             <h2>Car details</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+            <p>We offer best quality cars across various locations in USA</p>
           </div>
           <?php 
           $vhid=intval($_GET['vhid']);
@@ -349,16 +349,17 @@ if(isset($_POST['submit']))
               </div>
               <form method="post">
                 <div class="form-group">
-                  <label>From Date:</label>
+                  <label>Pick Up Date:</label>
                   <input type="date" class="form-control" name="fromdate" placeholder="From Date" required>
                 </div>
                 <div class="form-group">
-                  <label>To Date:</label>
+                  <label>Drop Off Date:</label>
                   <input type="date" class="form-control" name="todate" placeholder="To Date" required>
                 </div>
                 <div class="form-group">
                   <textarea rows="4" class="form-control" name="message" placeholder="Message" required></textarea>
-                </div> 
+                </div>
+
                 <div class="form-group">
                   <label for="pickup">Pick-up Location:</label>
                   <select name="pickup" id="pickup">
@@ -374,8 +375,9 @@ if(isset($_POST['submit']))
                     <option value="BST">Boston, Massachusettes</option>
                     <option value="JRS">Jersey City, New Jersey</option>
                   </select>
-                  <div class="form-group">
-                  <label for="pickup">Drop-off Location:</label>
+                </div>  
+                <div class="form-group">
+                    <label for="pickup">Drop-off Location:</label>
                   <select name="dropoff" id="dropoff">
                     <option value="">--Choose a Drop-Off Location--</option>
                     <option value="NYC">New York City, New York</option>
@@ -389,6 +391,48 @@ if(isset($_POST['submit']))
                     <option value="BST">Boston, Massachusettes</option>
                     <option value="JRS">Jersey City, New Jersey</option>
                   </select>
+                </div>  
+
+                <div class="col-50">
+                  <h3>Payment</h3>
+                  <label for="fname">Accepted Cards</label>
+                <div class="icon-container">
+                  <i class="fa fa-cc-visa" style="color:navy;"></i>
+                  <i class="fa fa-cc-amex" style="color:blue;"></i>
+                  <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                  <i class="fa fa-cc-discover" style="color:orange;"></i>
+                </div>
+                <label for="cname">Name on Card</label>
+                  <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                  <label for="ccnum"> <i class="fa fa-credit-card"></i>Credit card number</label>
+                  <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                  <label for="expmonth"> <i class="fa fa-calendar"></i>Exp Month</label>
+                  <input type="text" id="expmonth" name="expmonth" placeholder="September"></br>
+                  <label for="expyear"><i class="fa fa-calendar"></i>Exp Year</label>
+                  <input type="text" id="expyear" name="expyear" placeholder="2018"></br>
+                  <label for="cvv"><i class="fa fa-credit-card-alt"></i>CVV</label>
+                  <input type="password" id="cvv" name="cvv" placeholder="352"></br></br>
+                 
+              </div>
+
+              <div class="row">
+                <div class="col-50">
+                  <h3>Billing Address</h3>
+                  <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                  <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                  <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                  <input type="text" id="email" name="email" placeholder="john@example.com">
+                  <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                  <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                  <label for="city"><i class="fa fa-institution"></i> City</label>
+                  <input type="text" id="city" name="city" placeholder="New York">
+                  <label for="state">State</label>
+                  <input type="text" id="state" name="state" placeholder="NY">
+                  <label for="zip">Zip</label>
+                  <input type="text" id="zip" name="zip" placeholder="10001">
+                </div>
+              </div>
+                
                 <?php if($_SESSION['login'])
                 {?>
                   <div class="form-group">
