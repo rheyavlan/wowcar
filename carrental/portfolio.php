@@ -7,7 +7,7 @@ error_reporting(0);
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Car Rental Portal - Gallery</title>
+  <title>Car Rental Portal - Portfolio</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">

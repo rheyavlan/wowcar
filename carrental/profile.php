@@ -12,15 +12,19 @@ else{
     $name=$_POST['fullname'];
     $mobileno=$_POST['mobilenumber'];
     $dob=$_POST['dob'];
+    $drv_license_no=$_POST['drv_license_no'];
+    $pol_num=$_POST['pol_num'];
     $adress=$_POST['address'];
     $city=$_POST['city'];
     $country=$_POST['country'];
     $email=$_SESSION['login'];
-    $sql="update tblusers set FullName=:name,ContactNo=:mobileno,dob=:dob,Address=:adress,City=:city,Country=:country where EmailId=:email";
+    $sql="update tblusers set FullName=:name,ContactNo=:mobileno,dob=:dob,drv_license_no=:drv_license_no,pol_num=:pol_num,Address=:adress,City=:city,Country=:country where EmailId=:email";
     $query = $dbh->prepare($sql);
     $query->bindParam(':name',$name,PDO::PARAM_STR);
     $query->bindParam(':mobileno',$mobileno,PDO::PARAM_STR);
     $query->bindParam(':dob',$dob,PDO::PARAM_STR);
+    $query->bindParam(':drv_license_no',$drv_license_no,PDO::PARAM_STR);
+    $query->bindParam(':pol_num',$pol_num,PDO::PARAM_STR);
     $query->bindParam(':adress',$adress,PDO::PARAM_STR);
     $query->bindParam(':city',$city,PDO::PARAM_STR);
     $query->bindParam(':country',$country,PDO::PARAM_STR);
@@ -160,6 +164,14 @@ else{
                           <div class="form-group">
                             <label class="control-label">Date of Birth&nbsp;(dd/mm/yyyy)</label>
                             <input class="form-control white_bg" value="<?php echo htmlentities($result->dob);?>" name="dob" placeholder="dd/mm/yyyy" id="birth-date" type="text" >
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label">Driving License Number</label>
+                            <input class="form-control white_bg" value="<?php echo htmlentities($result->drv_license_no);?>" name="drv_license_no" placeholder="driving license number" id="birth-date" type="text" >
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label">Policy Number</label>
+                            <input class="form-control white_bg" value="<?php echo htmlentities($result->pol_num);?>" name="pol_num" placeholder="policy number" id="birth-date" type="text" >
                           </div>
                           <div class="form-group">
                             <label class="control-label">Your Address</label>
