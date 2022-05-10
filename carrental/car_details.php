@@ -338,7 +338,7 @@ if(isset($_POST['submit']))
           </div>
 
           <!--Side-Bar-->
-          <aside class="col-md-3">
+          <aside class="col-md-9">
 
             <div class="share_vehicle">
               <p>Share: <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a> </p>
