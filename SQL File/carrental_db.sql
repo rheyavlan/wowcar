@@ -429,3 +429,47 @@ ADD COLUMN veh_odo_lim NUMERIC(4) AFTER SeatingCapacity;
 
 ALTER TABLE tblvehicles
 ADD COLUMN veh_om_fees NUMERIC(4) AFTER veh_odo_lim;
+
+CREATE TABLE `carrental_db`.`wowlocation` 
+( `location_id` INT(5) NOT NULL COMMENT 'primary key for location' , 
+`City` VARCHAR(30) NOT NULL COMMENT 'City of location' , 
+`State` VARCHAR(30) NOT NULL COMMENT 'State of location' , 
+PRIMARY KEY (`location_id`)) ENGINE = InnoDB;
+
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10001,'New York City','New York');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10002,'Buffalo','New York');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10003,'Los Angeles','California');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10004,'Chicago','Illinois');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10005,'Houston','Texas');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10006,'San Diego','California');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10007,'Columbus','Ohio');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10008,'Seattle','Washington');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10009,'Boston','Masachusettes');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10010,'Jersey City','New Jersey');
+
+-- Table structure for location search 
+
+CREATE TABLE `places` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+ `latitude` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+ `longitude` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+ `created` datetime NOT NULL,
+ `modified` datetime NOT NULL,
+ `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1=Active | 0=Inactive',
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- DML code for inserting locations into search
+
+INSERT INTO `places`(`id`, `title`, `address`, `latitude`, `longitude`, `created`, `modified`, `status`) VALUES (1,'WOW-Times Square','42nd Street, Times Square, New York City',40.7580,73.9855,2022-05-09,2022-05-09,1);
+INSERT INTO `places`(`id`, `title`, `address`, `latitude`, `longitude`, `created`, `modified`, `status`) VALUES (2,'WOW-Brooklyn Bridge','Brooklyn Bridge, New York City',40.7061,73.9969,2022-05-09,2022-05-09,1);
+INSERT INTO `places`(`id`, `title`, `address`, `latitude`, `longitude`, `created`, `modified`, `status`) VALUES (3,'WOW-Jersey City','Hoboken, Jersey City, New Jersey',40.7440,74.0324,2022-05-09,2022-05-09,1);
+INSERT INTO `places`(`id`, `title`, `address`, `latitude`, `longitude`, `created`, `modified`, `status`) VALUES (4,'WOW-Miami','Doral, Miami, Florida',25.7617,80.1918,2022-05-09,2022-05-09,1);
+INSERT INTO `places`(`id`, `title`, `address`, `latitude`, `longitude`, `created`, `modified`, `status`) VALUES (5,'WOW-Pasadena','Pasadena, California',34.0522,118.2437,2022-05-09,2022-05-09,1);
+INSERT INTO `places`(`id`, `title`, `address`, `latitude`, `longitude`, `created`, `modified`, `status`) VALUES (6,'WOW-Houston','Pearland, Houston, Texas',29.7604,95.3698,2022-05-09,2022-05-09,1);
+INSERT INTO `places`(`id`, `title`, `address`, `latitude`, `longitude`, `created`, `modified`, `status`) VALUES (7,'WOW-San Francisco','Golden gate Bridge, San Fransisco',37.8199,122.4783,2022-05-09,2022-05-09,1);
+INSERT INTO `places`(`id`, `title`, `address`, `latitude`, `longitude`, `created`, `modified`, `status`) VALUES (8,'WOW-Columbus','Dublin, Columbus, Ohio',39.9612,82.9988,2022-05-09,2022-05-09,1);
+INSERT INTO `places`(`id`, `title`, `address`, `latitude`, `longitude`, `created`, `modified`, `status`) VALUES (9,'WOW-Seattle','Redmond, Seattle, Washington',47.6062,122.3321,2022-05-09,2022-05-09,1);
+INSERT INTO `places`(`id`, `title`, `address`, `latitude`, `longitude`, `created`, `modified`, `status`) VALUES (10,'WOW-Las Vegas','Nevada, Las VEgas',36.1716,115.1391,2022-05-09,2022-05-09,1);

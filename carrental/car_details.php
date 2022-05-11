@@ -22,12 +22,14 @@ if(isset($_POST['submit']))
   if($query1->rowCount()==0)
   {
 
-    $sql="INSERT INTO  tblbooking(userEmail,VehicleId,FromDate,ToDate,message,Status,BookingNumber) VALUES(:useremail,:vhid,:fromdate,:todate,:message,:status,:bookingno)";
+    $sql="INSERT INTO  tblbooking(userEmail,VehicleId,FromDate,ToDate,pick_id,drop_id,message,Status,BookingNumber) VALUES(:useremail,:vhid,:fromdate,:todate,:pick_id,:drop_id,:message,:status,:bookingno)";
     $query = $dbh->prepare($sql);
     $query->bindParam(':useremail',$useremail,PDO::PARAM_STR);
     $query->bindParam(':vhid',$vhid,PDO::PARAM_STR);
     $query->bindParam(':fromdate',$fromdate,PDO::PARAM_STR);
     $query->bindParam(':todate',$todate,PDO::PARAM_STR);
+    $query->bindParam(':pick_id',$pick_id,PDO::PARAM_STR);
+    $query->bindParam(':drop_id',$drop_id,PDO::PARAM_STR);
     $query->bindParam(':message',$message,PDO::PARAM_STR);
     $query->bindParam(':status',$status,PDO::PARAM_STR);
     $query->bindParam(':bookingno',$bookingno,PDO::PARAM_STR);
@@ -359,36 +361,44 @@ if(isset($_POST['submit']))
                 <div class="form-group">
                   <textarea rows="4" class="form-control" name="message" placeholder="Message" required></textarea>
                 </div> 
-                <div class="form-group">
-                  <label for="pickup">Pick-up Location:</label>
-                  <select name="pickup" id="pickup">
-                    <option value="">--Choose a Pickup Location--</option>
-                    <option value="NYC">New York City, New York</option>
-                    <option value="BUF">Buffalo, New York</option>
-                    <option value="LA">Los Angeles, Claifornia</option>
-                    <option value="CHI">Chicago, Illinois</option>
-                    <option value="HOU">Houston, Texas</option>
-                    <option value="SND">San Diego, California</option>
-                    <option value="CMB">Columbus, Ohio</option>
-                    <option value="STL">Seattle, Washington</option>
-                    <option value="BST">Boston, Massachusettes</option>
-                    <option value="JRS">Jersey City, New Jersey</option>
-                  </select>
-                  <div class="form-group">
-                  <label for="pickup">Drop-off Location:</label>
-                  <select name="dropoff" id="dropoff">
-                    <option value="">--Choose a Drop-Off Location--</option>
-                    <option value="NYC">New York City, New York</option>
-                    <option value="BUF">Buffalo, New York</option>
-                    <option value="LA">Los Angeles, Claifornia</option>
-                    <option value="CHI">Chicago, Illinois</option>
-                    <option value="HOU">Houston, Texas</option>
-                    <option value="SND">San Diego, Californai</option>
-                    <option value="CMB">Columbus Ohio</option>
-                    <option value="STL">Seattle, Washington</option>
-                    <option value="BST">Boston, Massachusettes</option>
-                    <option value="JRS">Jersey City, New Jersey</option>
-                  </select>
+
+
+                <?php
+                    $mysqli = NEW mysqli("localhost","root","",'carrental_db');
+                    $result = $mysqli->query("SELECT City,State FROM wowlocation");
+                ?>
+
+                <label for="pickup">Pick-up Location:</label>
+                <select name="pickup" class="form-control" required>
+                <option value="">--Choose a Pickup Location--</option>
+                  <?php 
+                  while($rows = $result->fetch_assoc())
+                  {
+                    $City = $rows['City'];
+                    $State = $rows['State'];
+                    echo "<option value = '$City , $State'>$City,$State</option>";
+                  }
+                  ?>
+                </select>
+
+                <?php
+                    $mysqli = NEW mysqli("localhost","root","",'carrental_db');
+                    $result = $mysqli->query("SELECT City,State FROM wowlocation");
+                ?>
+
+                <label for="dropoff">Drop-Off Location:</label>
+                <select name="dropoff" class="form-control" required>
+                <option value="">--Choose a Dropoff Location--</option>
+                  <?php 
+                  while($rows = $result->fetch_assoc())
+                  {
+                    $City = $rows['City'];
+                    $State = $rows['State'];
+                    echo "<option value = '$City , $State'>$City,$State</option>";
+                  }
+                  ?>
+                </select>
+      
                 <?php if($_SESSION['login'])
                 {?>
                   <div class="form-group">
