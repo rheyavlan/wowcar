@@ -45,10 +45,6 @@ error_reporting(0);
 </section><!-- #Page Banner -->
 
 <main id="main">
-
-    <!--==========================
-      About Section
-      ============================-->
       <section id="about" class="wow fadeInUp">
         <div class="container"> 
           <div class="row">
@@ -160,7 +156,7 @@ error_reporting(0);
       </section><!-- #call-to-action -->
       
 
-    </main>
+</main>
 
   <!--==========================
     Footer
