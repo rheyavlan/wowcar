@@ -400,7 +400,7 @@ if(isset($_POST['submit']))
                 </select>
                 </br></br>
 
-                <!--<div class="col-50">
+                <div class="col-50">
                 <div class="container">
                 <div class="listing_detail_head row">
                   <div class="col-md-9">
