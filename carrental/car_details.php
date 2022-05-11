@@ -157,6 +157,14 @@ if(isset($_POST['submit']))
                         <h5><?php echo htmlentities($result->SeatingCapacity);?></h5>
                         <p>Seats</p>
                       </li>
+                      <li> <i class="fa fa-tachometer" aria-hidden="true"></i>
+                        <h5><?php echo htmlentities($result->veh_odo_lim);?></h5>
+                        <p>miles/day</p>
+                      </li>
+                      <li> <i class="fa fa-usd" aria-hidden="true"></i>
+                        <h5><?php echo htmlentities($result->veh_om_fees);?></h5>
+                        <p>om fees/mile</p>
+                      </li>
                     </ul>
                   </div>
                   <div class="listing_more_info">
@@ -459,7 +467,7 @@ if(isset($_POST['submit']))
           <div class="row">
             <?php 
             $bid=$_SESSION['brndid'];
-            $sql="SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblvehicles.VehiclesBrand=:bid";
+            $sql="SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.veh_odo_lim,tblvehicles.veh_om_fees,tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblvehicles.VehiclesBrand=:bid";
             $query = $dbh -> prepare($sql);
             $query->bindParam(':bid',$bid, PDO::PARAM_STR);
             $query->execute();
@@ -483,6 +491,8 @@ if(isset($_POST['submit']))
                        <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity);?> seats</li>
                        <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear);?> model</li>
                        <li><i class="fa fa-car" aria-hidden="true"></i><?php echo htmlentities($result->FuelType);?></li>
+                        <li><i class="fa fa-tachometer" aria-hidden="true"></i><?php echo htmlentities($result->veh_odo_lim);?> miles/day</li>
+                        <li><i class="fa fa-usd" aria-hidden="true"></i><?php echo htmlentities($result->veh_om_fees);?> om fees/mile</li>
                      </ul>
                    </div>
                  </div>
