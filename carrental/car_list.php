@@ -89,6 +89,8 @@ error_reporting(0);
                           <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity);?> seats</li>
                           <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear);?> model</li>
                           <li><i class="fa fa-car" aria-hidden="true"></i><?php echo htmlentities($result->FuelType);?></li>
+                          <li><i class="fa fa-tachometer" aria-hidden="true"></i><?php echo htmlentities($result->veh_odo_lim);?> miles/day</li>
+                          <li><i class="fa fa-usd" aria-hidden="true"></i><?php echo htmlentities($result->veh_om_fees);?> om fees/mile</li>
                         </ul>
                         <a href="car_details.php?vhid=<?php echo htmlentities($result->id);?>" class="btn" style="background-color: orange" >View Details <span class="angle_arrow"><i class="fa fa-angle-right" style="color: black " aria-hidden="true"></i></span></a>
                       </div>
