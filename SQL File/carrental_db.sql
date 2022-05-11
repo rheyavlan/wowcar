@@ -429,3 +429,13 @@ ADD COLUMN veh_odo_lim NUMERIC(4) AFTER SeatingCapacity;
 
 ALTER TABLE tblvehicles
 ADD COLUMN veh_om_fees NUMERIC(4) AFTER veh_odo_lim;
+
+CREATE TABLE `tbldiscount` (
+  `DISCOUNT_ID` int(5) NOT NULL,
+  `DISC_PERC` int(3) NOT NULL,
+  `DISC_START_DT` date NOT NULL,
+  `DISC_EXP_DT` date NOT NULL
+) 
+
+INSERT INTO `tbldiscount`(`DISCOUNT_ID`, `DISC_PERC`, `DISC_START_DT`, `DISC_EXP_DT`) 
+VALUES (1,20,STR_TO_DATE('11-05-2022', '%d-%m-%Y'),STR_TO_DATE('15-05-2022', '%d-%m-%Y'))

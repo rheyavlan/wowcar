@@ -356,6 +356,7 @@ if(isset($_POST['submit']))
                   <label>Drop Off Date:</label>
                   <input type="date" class="form-control" name="todate" placeholder="To Date" required>
                 </div>
+
                 <div class="form-group">
                   <textarea rows="4" class="form-control" name="message" placeholder="Message" required></textarea>
                 </div>
@@ -393,8 +394,38 @@ if(isset($_POST['submit']))
                   </select>
                 </div>  
 
+                
+                <div class="coupon">
+                  <div class="coupponcontainer">
+                    <h3>Special Offer</h3>
+                  </div>
+                  <img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" alt="Avatar" style="height: 150px; width:400px;">
+                  <div class="container" style="background-color:white">
+                    <h6><b>20% OFF YOUR PURCHASE</b></h6>
+                  </div>
+                  <div class="coupponcontainer">
+                    <p>Use Promo Code: <span class="promo">WOW2020</span></p>
+                    <p class="expire">Expires: May 17, 2021</p>
+                  </div>
+                </div>
+
+                <input type="text" id="discount" name="discount" placeholder="Type discount coupon code" style="width:20%">
+                <input type="submit" class="btn" style="background-color: orange;"  name="apply" value="Apply"></br>
+
                 <div class="col-50">
-                  <h3>Payment</h3>
+                <div class="container">
+                <div class="listing_detail_head row">
+                  <div class="col-md-9">
+                  </br><h6>Payment</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="price_info">
+                      <p>$<?php echo htmlentities($result->PricePerDay);?> </p>Per Day
+
+                    </div>
+                  </div>
+                </div>
+                  </div>
                   <label for="fname">Accepted Cards</label>
                 <div class="icon-container">
                   <i class="fa fa-cc-visa" style="color:navy;"></i>
