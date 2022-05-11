@@ -45,36 +45,6 @@ error_reporting(0);
 </section><!-- #Page Banner -->
 
 <main id="main">
-  <centre>
-  <form method="post"> 
-    <input type="text" name="Location" placeholder="Search Location.." required/>
-    <input type="submit" name="Search"/>
-  </form>
-  </centre>
-
-  <?php
-  $connection = mysqli_connect("localhost","root","");
-  $db = mysqli_select_db($connection,'carrental_db');
-
-  if(isset($_POST['Search']))
-  {
-    $location = $_POST['Location'];
-
-    $query = "SELECT City,State FROM wowlocation WHERE City = '$location' ";
-    $query_run = mysqli_query($connection, $query);
-
-    while($row = mysqli_fetch_array($query_run))
-    {
-      ?>
-          <form action="" method="POST">
-            <?php echo $row['City']. " , " . $row['State'] ?>
-        
-          </form>
-
-      <?php
-    }
-  }
-  ?>
       <section id="about" class="wow fadeInUp">
         <div class="container"> 
           <div class="row">
@@ -186,7 +156,7 @@ error_reporting(0);
       </section><!-- #call-to-action -->
       
 
-    </main>
+</main>
 
   <!--==========================
     Footer
