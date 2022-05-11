@@ -43,12 +43,14 @@ $query -> execute();
                         <th>Price Per day</th>
                         <th>Fuel Type</th>
                         <th>Model Year</th>
+                        <th>Vehicle Mileage Limit</th>
+                        <th>Vehicle Over Mileage Fees</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php
-                      $sql = "SELECT tblvehicles.VehiclesTitle,tblvehicles.Vimage1,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.id from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand";
+                      $sql = "SELECT tblvehicles.VehiclesTitle,tblvehicles.Vimage1,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.veh_odo_lim,tblvehicles.veh_om_fees,tblvehicles.id from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand";
                       $query = $dbh -> prepare($sql);
                       $query->execute();
                       $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -67,6 +69,8 @@ $query -> execute();
                             <td class="text-center"><?php echo htmlentities($row->PricePerDay);?></td>
                             <td><?php echo htmlentities($row->FuelType);?></td>
                             <td><?php echo htmlentities($row->ModelYear);?></td>
+                            <td><?php echo htmlentities($row->veh_odo_lim);?></td>
+                            <td><?php echo htmlentities($row->veh_om_fees);?></td>
                             <td>
                               <a href="edit_car.php?id=<?php echo $row->id;?>" title="click to edit"><i class="mdi mdi-pencil-box-outline" aria-hidden="true"></i></a>
                               <a href="manage_car.php?del=<?php echo $row->id;?>" onclick="return confirm('Do you want to delete');"><i class="mdi mdi-delete"></i></i></a>

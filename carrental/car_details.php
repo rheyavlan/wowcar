@@ -159,6 +159,14 @@ if(isset($_POST['submit']))
                         <h5><?php echo htmlentities($result->SeatingCapacity);?></h5>
                         <p>Seats</p>
                       </li>
+                      <li> <i class="fa fa-tachometer" aria-hidden="true"></i>
+                        <h5><?php echo htmlentities($result->veh_odo_lim);?></h5>
+                        <p>miles/day</p>
+                      </li>
+                      <li> <i class="fa fa-usd" aria-hidden="true"></i>
+                        <h5><?php echo htmlentities($result->veh_om_fees);?></h5>
+                        <p>om fees/mile</p>
+                      </li>
                     </ul>
                   </div>
                   <div class="listing_more_info">
@@ -340,7 +348,7 @@ if(isset($_POST['submit']))
           </div>
 
           <!--Side-Bar-->
-          <aside class="col-md-3">
+          <aside class="col-md-9">
 
             <div class="share_vehicle">
               <p>Share: <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a> </p>
@@ -365,14 +373,14 @@ if(isset($_POST['submit']))
 
                 <?php
                     $mysqli = NEW mysqli("localhost","root","",'carrental_db');
-                    $result = $mysqli->query("SELECT City,State FROM wowlocation");
+                    $pickup = $mysqli->query("SELECT City,State FROM wowlocation");
                 ?>
 
                 <label for="pickup">Pick-up Location:</label>
                 <select name="pickup" class="form-control" required>
                 <option value="">--Choose a Pickup Location--</option>
                   <?php 
-                  while($rows = $result->fetch_assoc())
+                  while($rows = $pickup->fetch_assoc())
                   {
                     $City = $rows['City'];
                     $State = $rows['State'];
@@ -383,14 +391,14 @@ if(isset($_POST['submit']))
 
                 <?php
                     $mysqli = NEW mysqli("localhost","root","",'carrental_db');
-                    $result = $mysqli->query("SELECT City,State FROM wowlocation");
+                    $drop = $mysqli->query("SELECT City,State FROM wowlocation");
                 ?>
 
                 <label for="dropoff">Drop-Off Location:</label>
                 <select name="dropoff" class="form-control" required>
                 <option value="">--Choose a Dropoff Location--</option>
                   <?php 
-                  while($rows = $result->fetch_assoc())
+                  while($rows = $drop->fetch_assoc())
                   {
                     $City = $rows['City'];
                     $State = $rows['State'];
@@ -398,6 +406,75 @@ if(isset($_POST['submit']))
                   }
                   ?>
                 </select>
+                </br></br>
+                <div class="coupon">
+                  <div class="coupponcontainer">
+                    <h3>Special Offer</h3>
+                  </div>
+                  <img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" alt="Avatar" style="height: 150px; width:400px;">
+                  <div class="container" style="background-color:white">
+                    <h6><b>20% OFF YOUR PURCHASE</b></h6>
+                  </div>
+                  <div class="coupponcontainer">
+                    <p>Use Promo Code: <span class="promo">WOW2020</span></p>
+                    <p class="expire">Expires: May 17, 2021</p>
+                  </div>
+                </div>
+
+                <input type="text" id="discount" name="discount" placeholder="Type discount coupon code" style="width:20%">
+                <input type="submit" class="btn" style="background-color: orange;"  name="apply" value="Apply"></br>
+
+                <div class="col-50">
+                <div class="container">
+                <div class="listing_detail_head row">
+                  <div class="col-md-9">
+                  <h6>Payment</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="price_info">
+                      <p>$<?php echo htmlentities($result->PricePerDay);?> </p>Per Day
+
+                    </div>
+                  </div>
+                </div>
+                  </div>
+                  <label for="fname">Accepted Cards</label>
+                <div class="icon-container">
+                  <i class="fa fa-cc-visa" style="color:navy;"></i>
+                  <i class="fa fa-cc-amex" style="color:blue;"></i>
+                  <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                  <i class="fa fa-cc-discover" style="color:orange;"></i>
+                </div>
+                <label for="cname">Name on Card</label>
+                  <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                  <label for="ccnum"> <i class="fa fa-credit-card"></i>Credit card number</label>
+                  <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                  <label for="expmonth"> <i class="fa fa-calendar"></i>Exp Month</label>
+                  <input type="text" id="expmonth" name="expmonth" placeholder="September"></br>
+                  <label for="expyear"><i class="fa fa-calendar"></i>Exp Year</label>
+                  <input type="text" id="expyear" name="expyear" placeholder="2018"></br>
+                  <label for="cvv"><i class="fa fa-credit-card-alt"></i>CVV</label>
+                  <input type="password" id="cvv" name="cvv" placeholder="352"></br></br>
+                
+              </div>
+
+              <div class="row">
+                <div class="col-50">
+                  <h3>Billing Address</h3>
+                  <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                  <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                  <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                  <input type="text" id="email" name="email" placeholder="john@example.com">
+                  <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                  <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                  <label for="city"><i class="fa fa-institution"></i> City</label>
+                  <input type="text" id="city" name="city" placeholder="New York">
+                  <label for="state">State</label>
+                  <input type="text" id="state" name="state" placeholder="NY">
+                  <label for="zip">Zip</label>
+                  <input type="text" id="zip" name="zip" placeholder="10001">
+                </div>
+              </div>-->
       
                 <?php if($_SESSION['login'])
                 {?>
@@ -425,7 +502,7 @@ if(isset($_POST['submit']))
           <div class="row">
             <?php 
             $bid=$_SESSION['brndid'];
-            $sql="SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblvehicles.VehiclesBrand=:bid";
+            $sql="SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.veh_odo_lim,tblvehicles.veh_om_fees,tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblvehicles.VehiclesBrand=:bid";
             $query = $dbh -> prepare($sql);
             $query->bindParam(':bid',$bid, PDO::PARAM_STR);
             $query->execute();
@@ -449,6 +526,8 @@ if(isset($_POST['submit']))
                        <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity);?> seats</li>
                        <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear);?> model</li>
                        <li><i class="fa fa-car" aria-hidden="true"></i><?php echo htmlentities($result->FuelType);?></li>
+                        <li><i class="fa fa-tachometer" aria-hidden="true"></i><?php echo htmlentities($result->veh_odo_lim);?> miles/day</li>
+                        <li><i class="fa fa-usd" aria-hidden="true"></i><?php echo htmlentities($result->veh_om_fees);?> om fees/mile</li>
                      </ul>
                    </div>
                  </div>
