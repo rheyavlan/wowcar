@@ -102,7 +102,7 @@ if(isset($_POST['submit']))
         <div class="container">
           <div class="section-header">
             <h2>Car details</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+            <p>Luxurious, Spacious and smooth sailing car with latest features like Air conditioning, Cruise control, Power windows, Disc brakes and leather seats that provide great comfort to you! It gives great mileage and can go from 0-100 in 10 seconds.</p>
           </div>
           <?php 
           $vhid=intval($_GET['vhid']);
