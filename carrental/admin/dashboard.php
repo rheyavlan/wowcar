@@ -83,11 +83,61 @@ check_login();
                   $brands=$query3->rowCount();
                   ?>  
                   <h2 class="mb-5"><?php echo htmlentities($brands);?></h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                
+              
+            
+
+        <?php
+ 
+        $dataPoints = array
+        ( 
+          array("y" => $regusers,"label" => "Registered Users" ),
+          array("y" => $totalvehicle,"label" => "Listed Vehicles" ),
+          array("y" => $bookings,"label" => "Total Booking" ),
+          array("y" => $brands,"label" => "Total Brands" ),
+        );
+ 
+?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function() {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title:{
+		text: "WOW Car Rental Statistics"
+	},
+	axisY: {
+		title: "Count",
+		includeZero: true
+	},
+	data: [{
+		type: "bar",
+		yValueFormatString: "#,##0",
+		indexLabel: "{y}",
+		indexLabelPlacement: "inside",
+		indexLabelFontWeight: "bolder",
+		indexLabelFontColor: "white",
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+ 
+}
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>      
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <?php @include("includes/footer.php");?>
