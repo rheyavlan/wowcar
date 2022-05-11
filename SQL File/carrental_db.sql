@@ -435,7 +435,24 @@ CREATE TABLE `tbldiscount` (
   `DISC_PERC` int(3) NOT NULL,
   `DISC_START_DT` date NOT NULL,
   `DISC_EXP_DT` date NOT NULL
-) 
+); 
 
 INSERT INTO `tbldiscount`(`DISCOUNT_ID`, `DISC_PERC`, `DISC_START_DT`, `DISC_EXP_DT`) 
-VALUES (1,20,STR_TO_DATE('11-05-2022', '%d-%m-%Y'),STR_TO_DATE('15-05-2022', '%d-%m-%Y'))
+VALUES (1,20,STR_TO_DATE('11-05-2022', '%d-%m-%Y'),STR_TO_DATE('15-05-2022', '%d-%m-%Y'));
+
+CREATE TABLE `carrental_db`.`wowlocation` 
+( `location_id` INT(5) NOT NULL COMMENT 'primary key for location' , 
+`City` VARCHAR(30) NOT NULL COMMENT 'City of location' , 
+`State` VARCHAR(30) NOT NULL COMMENT 'State of location' , 
+PRIMARY KEY (`location_id`)) ENGINE = InnoDB;
+
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10001,'New York City','New York');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10002,'Buffalo','New York');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10003,'Los Angeles','California');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10004,'Chicago','Illinois');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10005,'Houston','Texas');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10006,'San Diego','California');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10007,'Columbus','Ohio');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10008,'Seattle','Washington');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10009,'Boston','Masachusettes');
+INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10010,'Jersey City','New Jersey');

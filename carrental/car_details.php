@@ -22,12 +22,14 @@ if(isset($_POST['submit']))
   if($query1->rowCount()==0)
   {
 
-    $sql="INSERT INTO  tblbooking(userEmail,VehicleId,FromDate,ToDate,message,Status,BookingNumber) VALUES(:useremail,:vhid,:fromdate,:todate,:message,:status,:bookingno)";
+    $sql="INSERT INTO  tblbooking(userEmail,VehicleId,FromDate,ToDate,pick_id,drop_id,message,Status,BookingNumber) VALUES(:useremail,:vhid,:fromdate,:todate,:pick_id,:drop_id,:message,:status,:bookingno)";
     $query = $dbh->prepare($sql);
     $query->bindParam(':useremail',$useremail,PDO::PARAM_STR);
     $query->bindParam(':vhid',$vhid,PDO::PARAM_STR);
     $query->bindParam(':fromdate',$fromdate,PDO::PARAM_STR);
     $query->bindParam(':todate',$todate,PDO::PARAM_STR);
+    $query->bindParam(':pick_id',$pick_id,PDO::PARAM_STR);
+    $query->bindParam(':drop_id',$drop_id,PDO::PARAM_STR);
     $query->bindParam(':message',$message,PDO::PARAM_STR);
     $query->bindParam(':status',$status,PDO::PARAM_STR);
     $query->bindParam(':bookingno',$bookingno,PDO::PARAM_STR);
@@ -100,7 +102,7 @@ if(isset($_POST['submit']))
         <div class="container">
           <div class="section-header">
             <h2>Car details</h2>
-            <p>We offer best quality cars across various locations in USA</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
           </div>
           <?php 
           $vhid=intval($_GET['vhid']);
@@ -349,74 +351,60 @@ if(isset($_POST['submit']))
               </div>
               <form method="post">
                 <div class="form-group">
-                  <label>Pick Up Date:</label>
+                  <label>From Date:</label>
                   <input type="date" class="form-control" name="fromdate" placeholder="From Date" required>
                 </div>
                 <div class="form-group">
-                  <label>Drop Off Date:</label>
+                  <label>To Date:</label>
                   <input type="date" class="form-control" name="todate" placeholder="To Date" required>
                 </div>
-
                 <div class="form-group">
                   <textarea rows="4" class="form-control" name="message" placeholder="Message" required></textarea>
-                </div>
+                </div> 
 
-                <div class="form-group">
-                  <label for="pickup">Pick-up Location:</label>
-                  <select name="pickup" id="pickup">
-                    <option value="">--Choose a Pickup Location--</option>
-                    <option value="NYC">New York City, New York</option>
-                    <option value="BUF">Buffalo, New York</option>
-                    <option value="LA">Los Angeles, Claifornia</option>
-                    <option value="CHI">Chicago, Illinois</option>
-                    <option value="HOU">Houston, Texas</option>
-                    <option value="SND">San Diego, California</option>
-                    <option value="CMB">Columbus, Ohio</option>
-                    <option value="STL">Seattle, Washington</option>
-                    <option value="BST">Boston, Massachusettes</option>
-                    <option value="JRS">Jersey City, New Jersey</option>
-                  </select>
-                </div>  
-                <div class="form-group">
-                    <label for="pickup">Drop-off Location:</label>
-                  <select name="dropoff" id="dropoff">
-                    <option value="">--Choose a Drop-Off Location--</option>
-                    <option value="NYC">New York City, New York</option>
-                    <option value="BUF">Buffalo, New York</option>
-                    <option value="LA">Los Angeles, Claifornia</option>
-                    <option value="CHI">Chicago, Illinois</option>
-                    <option value="HOU">Houston, Texas</option>
-                    <option value="SND">San Diego, Californai</option>
-                    <option value="CMB">Columbus Ohio</option>
-                    <option value="STL">Seattle, Washington</option>
-                    <option value="BST">Boston, Massachusettes</option>
-                    <option value="JRS">Jersey City, New Jersey</option>
-                  </select>
-                </div>  
 
-                
-                <div class="coupon">
-                  <div class="coupponcontainer">
-                    <h3>Special Offer</h3>
-                  </div>
-                  <img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" alt="Avatar" style="height: 150px; width:400px;">
-                  <div class="container" style="background-color:white">
-                    <h6><b>20% OFF YOUR PURCHASE</b></h6>
-                  </div>
-                  <div class="coupponcontainer">
-                    <p>Use Promo Code: <span class="promo">WOW2020</span></p>
-                    <p class="expire">Expires: May 17, 2021</p>
-                  </div>
-                </div>
+                <?php
+                    $mysqli = NEW mysqli("localhost","root","",'carrental_db');
+                    $pickup = $mysqli->query("SELECT City,State FROM wowlocation");
+                ?>
 
-                <input type="text" id="discount" name="discount" placeholder="Type discount coupon code" style="width:20%">
-                <input type="submit" class="btn" style="background-color: orange;"  name="apply" value="Apply"></br>
+                <label for="pickup">Pick-up Location:</label>
+                <select name="pickup" class="form-control" required>
+                <option value="">--Choose a Pickup Location--</option>
+                  <?php 
+                  while($rows = $pickup->fetch_assoc())
+                  {
+                    $City = $rows['City'];
+                    $State = $rows['State'];
+                    echo "<option value = '$City , $State'>$City,$State</option>";
+                  }
+                  ?>
+                </select>
 
-                <div class="col-50">
+                <?php
+                    $mysqli = NEW mysqli("localhost","root","",'carrental_db');
+                    $drop = $mysqli->query("SELECT City,State FROM wowlocation");
+                ?>
+
+                <label for="dropoff">Drop-Off Location:</label>
+                <select name="dropoff" class="form-control" required>
+                <option value="">--Choose a Dropoff Location--</option>
+                  <?php 
+                  while($rows = $drop->fetch_assoc())
+                  {
+                    $City = $rows['City'];
+                    $State = $rows['State'];
+                    echo "<option value = '$City , $State'>$City,$State</option>";
+                  }
+                  ?>
+                </select>
+                </br></br>
+
+                <!--<div class="col-50">
                 <div class="container">
                 <div class="listing_detail_head row">
                   <div class="col-md-9">
-                  </br><h6>Payment</h6>
+                  <h6>Payment</h6>
                   </div>
                   <div class="col-md-3">
                     <div class="price_info">
@@ -443,7 +431,7 @@ if(isset($_POST['submit']))
                   <input type="text" id="expyear" name="expyear" placeholder="2018"></br>
                   <label for="cvv"><i class="fa fa-credit-card-alt"></i>CVV</label>
                   <input type="password" id="cvv" name="cvv" placeholder="352"></br></br>
-                 
+                
               </div>
 
               <div class="row">
@@ -462,8 +450,8 @@ if(isset($_POST['submit']))
                   <label for="zip">Zip</label>
                   <input type="text" id="zip" name="zip" placeholder="10001">
                 </div>
-              </div>
-                
+              </div>-->
+      
                 <?php if($_SESSION['login'])
                 {?>
                   <div class="form-group">
