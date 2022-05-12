@@ -6,7 +6,7 @@ if(isset($_POST['submit']))
 {
   $sectorname=$_POST['sectorname'];
   $sectordes=$_POST['sectordes'];
-  $sql="insert into tblservice(ServiceName,SerDes)values(:sectorname,:sectordes)";
+  $sql="insert into wowservice(ServiceName,SerDes)values(:sectorname,:sectordes)";
   $query=$dbh->prepare($sql);
   $query->bindParam(':sectorname',$sectorname,PDO::PARAM_STR);
   $query->bindParam(':sectordes',$sectordes,PDO::PARAM_STR);

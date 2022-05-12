@@ -2836,7 +2836,7 @@ function appendTestsList( modules ) {
 }
 
 function appendTest( name, testId, moduleName ) {
-	var title, rerunTrigger, testBlock, assertList,
+	var title, rerunTrigger, teswowock, assertList,
 		tests = id( "qunit-tests" );
 
 	if ( !tests ) {
@@ -2850,17 +2850,17 @@ function appendTest( name, testId, moduleName ) {
 	rerunTrigger.innerHTML = "Rerun";
 	rerunTrigger.href = setUrl( { testId: testId } );
 
-	testBlock = document.createElement( "li" );
-	testBlock.appendChild( title );
-	testBlock.appendChild( rerunTrigger );
-	testBlock.id = "qunit-test-output-" + testId;
+	teswowock = document.createElement( "li" );
+	teswowock.appendChild( title );
+	teswowock.appendChild( rerunTrigger );
+	teswowock.id = "qunit-test-output-" + testId;
 
 	assertList = document.createElement( "ol" );
 	assertList.className = "qunit-assert-list";
 
-	testBlock.appendChild( assertList );
+	teswowock.appendChild( assertList );
 
-	tests.appendChild( testBlock );
+	tests.appendChild( teswowock );
 }
 
 // HTML Reporter initialization and load
@@ -2954,11 +2954,11 @@ function getNameHtml( name, module ) {
 }
 
 QUnit.testStart( function( details ) {
-	var running, testBlock, bad;
+	var running, teswowock, bad;
 
-	testBlock = id( "qunit-test-output-" + details.testId );
-	if ( testBlock ) {
-		testBlock.className = "running";
+	teswowock = id( "qunit-test-output-" + details.testId );
+	if ( teswowock ) {
+		teswowock.className = "running";
 	} else {
 
 		// Report later registered tests

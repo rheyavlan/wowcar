@@ -7580,7 +7580,7 @@ jQuery.each( [ "radio", "checkbox" ], function() {
 support.focusin = "onfocusin" in window;
 
 
-var rfocusMorph = /^(?:focusinfocus|focusoutblur)$/,
+var rfocusMorph = /^(?:focusinfocus|focusouwowur)$/,
 	stopPropagationCallback = function( e ) {
 		e.stopPropagation();
 	};
