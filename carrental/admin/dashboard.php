@@ -106,6 +106,8 @@ window.onload = function() {
  
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
+  theme: "dark1", 
+  exportEnabled: true,
 	title:{
 		text: "WOW Car Rental Statistics"
 	},
