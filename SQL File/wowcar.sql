@@ -437,9 +437,6 @@ CREATE TABLE `wowdiscount` (
   `DISC_EXP_DT` date NOT NULL
 ); 
 
-INSERT INTO `wowdiscount`(`DISCOUNT_ID`, `DISC_PERC`, `DISC_START_DT`, `DISC_EXP_DT`) 
-VALUES (1,20,STR_TO_DATE('11-05-2022', '%d-%m-%Y'),STR_TO_DATE('15-05-2022', '%d-%m-%Y'));
-
 CREATE TABLE `wowcar`.`wowlocation` 
 ( `location_id` INT(5) NOT NULL COMMENT 'primary key for location' , 
 `City` VARCHAR(30) NOT NULL COMMENT 'City of location' , 
@@ -461,3 +458,8 @@ ALTER TABLE wowbooking ADD COLUMN pick_id varchar(255);
 ALTER TABLE wowbooking ADD COLUMN drop_id varchar(255);
 
 ALTER TABLE `wowusers` ADD COLUMN CUSTTYPE CHAR(1);
+
+ALTER TABLE `wowdiscount` ADD COLUMN DISC_CODE VARCHAR(30);
+
+INSERT INTO `wowdiscount`(`DISCOUNT_ID`, `DISC_PERC`, `DISC_START_DT`, `DISC_EXP_DT`, `DISC_CODE`) 
+VALUES (1,20,STR_TO_DATE('11-05-2022', '%d-%m-%Y'),STR_TO_DATE('15-05-2022', '%d-%m-%Y'),'WOW2020');

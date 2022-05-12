@@ -406,23 +406,62 @@ if(isset($_POST['submit']))
                   }
                   ?>
                 </select>
-                </br></br>
+                
+
+                <input type="text" id="discount" name="discount" placeholder="Type discount coupon code" style="width:20%">
+                <input type="submit" class="btn" style="background-color: orange;"  name="apply" value="Apply"></br>
+
+
+                <!-- <table class="table align-items-center table-flush table-hover table-bordered" id="dataTableHover">
+                  <thead>
+                    <tr>
+                      <th>Discount ID</th>
+                      <th>Discount Perc</th>
+                      <th>Discount Start Date</th>
+                      <th>Discount end date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php
+                    $sql = "SELECT * from  wowdiscount ";
+                    $query = $dbh -> prepare($sql);
+                    $query->execute();
+                    $disc=$query->fetchAll(PDO::FETCH_OBJ);
+                    $cnt=1;
+                    if($query->rowCount() > 0)
+                    {
+                      foreach($disc as $disc)
+                      {     
+                        ?>
+                        <tr>
+                          <td><?php echo htmlentities($disc->DISCOUNT_ID);?></td>
+                          <td><?php echo htmlentities($disc->DISC_PERC);?></td>
+                          <td><?php  echo htmlentities(date("d-M-Y", strtotime($disc->DISC_START_DT)));?></td>
+                          <td><?php  echo htmlentities(date("d-M-Y", strtotime($disc->DISC_EXP_DT)));?></td>
+                          
+                          </tr>
+                          <?php 
+                          $cnt=$cnt+1;
+                        }
+                      } ?>
+                    </tbody>
+                  </table> -->
+
+                  </br></br>
                 <div class="coupon">
                   <div class="coupponcontainer">
                     <h3>Special Offer</h3>
                   </div>
                   <img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" alt="Avatar" style="height: 150px; width:400px;">
                   <div class="container" style="background-color:white">
-                    <h6><b>20% OFF YOUR PURCHASE</b></h6>
+                    <h6><b><?php echo htmlentities($disc->DISC_PERC);?>% OFF YOUR PURCHASE</b></h6>
                   </div>
                   <div class="coupponcontainer">
-                    <p>Use Promo Code: <span class="promo">WOW2020</span></p>
-                    <p class="expire">Expires: May 17, 2021</p>
+                    <p>Use Promo Code: <span class="promo"><?php echo htmlentities($disc->DISC_CODE);?></span></p>
+                    <p class="expire">Expires: <?php  echo htmlentities(date("d M Y", strtotime($disc->DISC_EXP_DT)));?></p>
                   </div>
                 </div>
 
-                <input type="text" id="discount" name="discount" placeholder="Type discount coupon code" style="width:20%">
-                <input type="submit" class="btn" style="background-color: orange;"  name="apply" value="Apply"></br>
 
                 <div class="col-50">
                 <div class="container">
@@ -432,7 +471,8 @@ if(isset($_POST['submit']))
                   </div>
                   <div class="col-md-3">
                     <div class="price_info">
-                      <p>$<?php echo htmlentities($result->PricePerDay);?> </p>Per Day
+                      <p>$<?php echo htmlentities($result->PricePerDay -  $result->PricePerDay 
+                      * $disc->DISC_PERC / 100);?> </p>Per Day
 
                     </div>
                   </div>
