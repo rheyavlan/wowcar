@@ -372,7 +372,7 @@ if(isset($_POST['submit']))
 
 
                 <?php
-                    $mysqli = NEW mysqli("localhost","root","",'carrental_db');
+                    $mysqli = NEW mysqli("localhost","root","",'wowcar');
                     $pickup = $mysqli->query("SELECT City,State FROM wowlocation");
                 ?>
 
@@ -390,7 +390,7 @@ if(isset($_POST['submit']))
                 </select>
 
                 <?php
-                    $mysqli = NEW mysqli("localhost","root","",'carrental_db');
+                    $mysqli = NEW mysqli("localhost","root","",'wowcar');
                     $drop = $mysqli->query("SELECT City,State FROM wowlocation");
                 ?>
 
@@ -474,7 +474,7 @@ if(isset($_POST['submit']))
                   <label for="zip">Zip</label>
                   <input type="text" id="zip" name="zip" placeholder="10001">
                 </div>
-              </div>-->
+              </div>
       
                 <?php if($_SESSION['login'])
                 {?>
