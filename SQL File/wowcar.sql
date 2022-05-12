@@ -459,3 +459,5 @@ INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10010,'Jersey 
 
 ALTER TABLE wowbooking ADD COLUMN pick_id varchar(255);
 ALTER TABLE wowbooking ADD COLUMN drop_id varchar(255);
+
+ALTER TABLE `wowusers` ADD COLUMN CUSTTYPE CHAR(1);

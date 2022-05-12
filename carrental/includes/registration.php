@@ -5,13 +5,15 @@ if(isset($_POST['signup']))
 $fname=$_POST['fullname'];
 $email=$_POST['emailid']; 
 $mobile=$_POST['mobileno'];
+$custType=$POST['cust_type'];
 $password=md5($_POST['password']); 
-$sql="INSERT INTO  wowusers(FullName,EmailId,ContactNo,Password) VALUES(:fname,:email,:mobile,:password)";
+$sql="INSERT INTO  wowusers(FullName,EmailId,ContactNo,Password,custType) VALUES(:fname,:email,:mobile,:password,:custType)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':fname',$fname,PDO::PARAM_STR);
 $query->bindParam(':email',$email,PDO::PARAM_STR);
 $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
 $query->bindParam(':password',$password,PDO::PARAM_STR);
+$query->bindParam(':custType',$custType,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
@@ -86,9 +88,9 @@ return true;
                 
                 <div class="form-group">
                  <p>Customer Type</p>
-                   <input type="radio" id="html" name="cust_type" value="Individual">
+                   <input type="radio" id="individual" name="cust_type" value="I">
                    <label for="individual">Individual</label><br>
-                   <input type="radio" id="css" name="cust_type" value="Corporate">
+                   <input type="radio" id="corporate" name="cust_type" value="C">
                    <label for="css">Corporate</label><br>
                </div>
 
