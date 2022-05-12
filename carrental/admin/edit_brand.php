@@ -7,7 +7,7 @@ if(isset($_POST['insert']))
     $eib= $_SESSION['editbid'];
     $brand=$_POST['brand'];
     $update=date('Y/m/d');
-    $sql4="update tblbrands set BrandName=:brand,UpdationDate=:update where id=:eib";
+    $sql4="update wowbrands set BrandName=:brand,UpdationDate=:update where id=:eib";
     $query=$dbh->prepare($sql4);
     $query->bindParam(':brand',$brand,PDO::PARAM_STR);
     $query->bindParam(':update',$update,PDO::PARAM_STR);
@@ -24,7 +24,7 @@ if(isset($_POST['insert']))
 <div class="card-body">
     <?php
     $eid=$_POST['edit_id4'];
-    $sql2="SELECT * from tblbrands  where tblbrands.id=:eid";
+    $sql2="SELECT * from wowbrands  where wowbrands.id=:eid";
     $query2 = $dbh -> prepare($sql2);
     $query2-> bindParam(':eid', $eid, PDO::PARAM_STR);
     $query2->execute();

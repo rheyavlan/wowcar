@@ -55,9 +55,9 @@ error_reporting(0);
             <?php 
                //Query for Listing count
             $searchdata=$_POST['searchdata'];
-            $sql = "SELECT tblvehicles.id from tblvehicles 
-            join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand 
-            where tblvehicles.VehiclesTitle=:search || tblvehicles.FuelType=:search || tblbrands.BrandName=:search || tblvehicles.ModelYear=:search";
+            $sql = "SELECT wowvehicles.id from wowvehicles 
+            join wowbrands on wowbrands.id=wowvehicles.VehiclesBrand 
+            where wowvehicles.VehiclesTitle=:search || wowvehicles.FuelType=:search || wowbrands.BrandName=:search || wowvehicles.ModelYear=:search";
             $query = $dbh -> prepare($sql);
             $query -> bindParam(':search',$searchdata, PDO::PARAM_STR);
             $query->execute();
@@ -69,9 +69,9 @@ error_reporting(0);
         </div>
 
         <?php 
-        $sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles 
-        join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand 
-        where tblvehicles.VehiclesTitle=:search || tblvehicles.FuelType=:search || tblbrands.BrandName=:search || tblvehicles.ModelYear=:search";
+        $sql = "SELECT wowvehicles.*,wowbrands.BrandName,wowbrands.id as bid  from wowvehicles 
+        join wowbrands on wowbrands.id=wowvehicles.VehiclesBrand 
+        where wowvehicles.VehiclesTitle=:search || wowvehicles.FuelType=:search || wowbrands.BrandName=:search || wowvehicles.ModelYear=:search";
         $query = $dbh -> prepare($sql);
         $query -> bindParam(':search',$searchdata, PDO::PARAM_STR);
         $query->execute();
@@ -109,7 +109,7 @@ error_reporting(0);
           </div>
           <div class="recent_addedcars">
             <ul>
-              <?php $sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand order by id desc limit 4";
+              <?php $sql = "SELECT wowvehicles.*,wowbrands.BrandName,wowbrands.id as bid  from wowvehicles join wowbrands on wowbrands.id=wowvehicles.VehiclesBrand order by id desc limit 4";
               $query = $dbh -> prepare($sql);
               $query->execute();
               $results=$query->fetchAll(PDO::FETCH_OBJ);

@@ -5,7 +5,7 @@ if(isset($_REQUEST['eid']))
 {
   $eid=intval($_GET['eid']);
   $status="2";
-  $sql = "UPDATE tblbooking SET Status=:status WHERE  id=:eid";
+  $sql = "UPDATE wowbooking SET Status=:status WHERE  id=:eid";
   $query = $dbh->prepare($sql);
   $query -> bindParam(':status',$status, PDO::PARAM_STR);
   $query-> bindParam(':eid',$eid, PDO::PARAM_STR);
@@ -20,7 +20,7 @@ if(isset($_REQUEST['aeid']))
   $aeid=intval($_GET['aeid']);
   $status=1;
 
-  $sql = "UPDATE tblbooking SET Status=:status WHERE  id=:aeid";
+  $sql = "UPDATE wowbooking SET Status=:status WHERE  id=:aeid";
   $query = $dbh->prepare($sql);
   $query -> bindParam(':status',$status, PDO::PARAM_STR);
   $query-> bindParam(':aeid',$aeid, PDO::PARAM_STR);
@@ -56,9 +56,9 @@ if(isset($_REQUEST['aeid']))
                    <tbody>
                     <?php 
                     $bid=intval($_GET['bid']);
-                    $sql = "SELECT tblusers.*,tblbrands.BrandName,tblvehicles.VehiclesTitle,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.VehicleId as vid,tblbooking.Status,tblbooking.PostingDate,tblbooking.id,tblbooking.BookingNumber,
-                    DATEDIFF(tblbooking.ToDate,tblbooking.FromDate) as totalnodays,tblvehicles.PricePerDay
-                    from tblbooking join tblvehicles on tblvehicles.id=tblbooking.VehicleId join tblusers on tblusers.EmailId=tblbooking.userEmail join tblbrands on tblvehicles.VehiclesBrand=tblbrands.id where tblbooking.id=:bid";
+                    $sql = "SELECT wowusers.*,wowbrands.BrandName,wowvehicles.VehiclesTitle,wowbooking.FromDate,wowbooking.ToDate,wowbooking.message,wowbooking.VehicleId as vid,wowbooking.Status,wowbooking.PostingDate,wowbooking.id,wowbooking.BookingNumber,
+                    DATEDIFF(wowbooking.ToDate,wowbooking.FromDate) as totalnodays,wowvehicles.PricePerDay
+                    from wowbooking join wowvehicles on wowvehicles.id=wowbooking.VehicleId join wowusers on wowusers.EmailId=wowbooking.userEmail join wowbrands on wowvehicles.VehiclesBrand=wowbrands.id where wowbooking.id=:bid";
                     $query = $dbh -> prepare($sql);
                     $query -> bindParam(':bid',$bid, PDO::PARAM_STR);
                     $query->execute();

@@ -18,7 +18,7 @@ else{
     $city=$_POST['city'];
     $country=$_POST['country'];
     $email=$_SESSION['login'];
-    $sql="update tblusers set FullName=:name,ContactNo=:mobileno,dob=:dob,drv_license_no=:drv_license_no,pol_num=:pol_num,Address=:adress,City=:city,Country=:country where EmailId=:email";
+    $sql="update wowusers set FullName=:name,ContactNo=:mobileno,dob=:dob,drv_license_no=:drv_license_no,pol_num=:pol_num,Address=:adress,City=:city,Country=:country where EmailId=:email";
     $query = $dbh->prepare($sql);
     $query->bindParam(':name',$name,PDO::PARAM_STR);
     $query->bindParam(':mobileno',$mobileno,PDO::PARAM_STR);
@@ -96,7 +96,7 @@ else{
     <main id="main">
       <?php 
       $useremail=$_SESSION['login'];
-      $sql = "SELECT * from tblusers where EmailId=:useremail";
+      $sql = "SELECT * from wowusers where EmailId=:useremail";
       $query = $dbh -> prepare($sql);
       $query -> bindParam(':useremail',$useremail, PDO::PARAM_STR);
       $query->execute();

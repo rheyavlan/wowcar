@@ -3,7 +3,7 @@
         <li class="nav-item nav-profile">
             <?php
             $aid=$_SESSION['odmsaid'];
-            $sql="SELECT * from  tbladmin where ID=:aid";
+            $sql="SELECT * from  wowadmin where ID=:aid";
             $query = $dbh -> prepare($sql);
             $query->bindParam(':aid',$aid,PDO::PARAM_STR);
             $query->execute();
@@ -31,7 +31,7 @@
                         <div class="nav-profile-text d-flex flex-column">
                             <span class="font-weight-bold mb-2"><?php  echo $row->FirstName;?> <?php  echo $row->LastName;?></span>
                             <?php
-                            $sql="SELECT * from  tblcompany ";
+                            $sql="SELECT * from  wowcompany ";
                             $query = $dbh -> prepare($sql);
                             $query->bindParam(':aid',$companyname,PDO::PARAM_STR);
                             $query->execute();
@@ -131,7 +131,7 @@
         </li>
         <?php
         $aid=$_SESSION['odmsaid'];
-        $sql="SELECT * from  tbladmin where ID=:aid";
+        $sql="SELECT * from  wowadmin where ID=:aid";
         $query = $dbh -> prepare($sql);
         $query->bindParam(':aid',$aid,PDO::PARAM_STR);
         $query->execute();
@@ -157,7 +157,7 @@
                                  <li class="nav-item"> <a class="nav-link" href="customers.php">Registered Customers </a></li> 
                                 <?php
                                 $aid=$_SESSION['odmsaid'];
-                                $sql="SELECT * from  tbladmin where ID=:aid";
+                                $sql="SELECT * from  wowadmin where ID=:aid";
                                 $query = $dbh -> prepare($sql);
                                 $query->bindParam(':aid',$aid,PDO::PARAM_STR);
                                 $query->execute();

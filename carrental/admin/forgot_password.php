@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
       $email=$_POST['email'];
       $mobile=$_POST['mobile'];
       $newpassword=md5($_POST['newpassword']);
-      $sql ="SELECT Email FROM tbladmin WHERE Email=:email and MobileNumber=:mobile";
+      $sql ="SELECT Email FROM wowadmin WHERE Email=:email and MobileNumber=:mobile";
       $query= $dbh -> prepare($sql);
       $query-> bindParam(':email', $email, PDO::PARAM_STR);
       $query-> bindParam(':mobile', $mobile, PDO::PARAM_STR);
@@ -24,7 +24,7 @@ if(isset($_POST['submit']))
       $results = $query -> fetchAll(PDO::FETCH_OBJ);
       if($query -> rowCount() > 0)
       {
-      $con="update tbladmin set Password=:newpassword where Email=:email and MobileNumber=:mobile";
+      $con="update wowadmin set Password=:newpassword where Email=:email and MobileNumber=:mobile";
       $chngpwd1 = $dbh->prepare($con);
       $chngpwd1-> bindParam(':email', $email, PDO::PARAM_STR);
       $chngpwd1-> bindParam(':mobile', $mobile, PDO::PARAM_STR);

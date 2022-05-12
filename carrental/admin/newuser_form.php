@@ -6,7 +6,7 @@ include('includes/dbconnection.php');
 if(!empty($_POST["fullname"])) {
   $fullname= $_POST["fullname"];
   
-  $sql ="SELECT UserName FROM tbladmin WHERE UserName=:fullname";
+  $sql ="SELECT UserName FROM wowadmin WHERE UserName=:fullname";
   $query= $dbh -> prepare($sql);
   $query-> bindParam(':fullname', $fullname, PDO::PARAM_STR);
   $query-> execute();
@@ -26,7 +26,7 @@ if(!empty($_POST["fullname"])) {
         $mobile=$_POST['mobileno'];
         $dignity=$_POST['dignity']; 
         $password=md5($_POST['password']); 
-        $sql="INSERT INTO  tbladmin(Staffid,AdminName,UserName,FirstName,LastName,Email,MobileNumber,Password) VALUES(:staffid,:dignity,:fname,:firstname,:lastname,:email,:mobile,:password)";
+        $sql="INSERT INTO  wowadmin(Staffid,AdminName,UserName,FirstName,LastName,Email,MobileNumber,Password) VALUES(:staffid,:dignity,:fname,:firstname,:lastname,:email,:mobile,:password)";
         $query = $dbh->prepare($sql);
         $query->bindParam(':fname',$fname,PDO::PARAM_STR);
         $query->bindParam(':firstname',$firstname,PDO::PARAM_STR);

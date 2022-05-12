@@ -9,7 +9,7 @@ if(isset($_POST['submit']))
   $lName=$_POST['lastname'];
   $mobno=$_POST['mobilenumber'];
   $email=$_POST['email'];
-  $sql="update tbladmin set UserName=:adminname,FirstName=:firstname,LastName=:lastname,MobileNumber=:mobilenumber,Email=:email where ID=:aid";
+  $sql="update wowadmin set UserName=:adminname,FirstName=:firstname,LastName=:lastname,MobileNumber=:mobilenumber,Email=:email where ID=:aid";
   $query = $dbh->prepare($sql);
   $query->bindParam(':adminname',$AName,PDO::PARAM_STR);
   $query->bindParam(':firstname',$fName,PDO::PARAM_STR);
@@ -42,7 +42,7 @@ if(isset($_POST['submit']))
                                 <div class="card-body">
                                     <?php
                                     $adminid=$_SESSION['odmsaid'];
-                                    $sql="SELECT * from  tbladmin where ID=:aid";
+                                    $sql="SELECT * from  wowadmin where ID=:aid";
                                     $query = $dbh -> prepare($sql);
                                     $query->bindParam(':aid',$adminid,PDO::PARAM_STR);
                                     $query->execute();

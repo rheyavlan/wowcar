@@ -39,7 +39,7 @@
         ?>
         <?php 
         $email=$_SESSION['login'];
-        $sql ="SELECT FullName FROM tblusers WHERE EmailId=:email ";
+        $sql ="SELECT FullName FROM wowusers WHERE EmailId=:email ";
         $query= $dbh -> prepare($sql);
         $query-> bindParam(':email', $email, PDO::PARAM_STR);
         $query-> execute();

@@ -22,7 +22,7 @@ if (strlen($_SESSION['odmsaid']==0))
     $size = $_FILES['note']['size'];
   // move the uploaded (temporary) file to the specified destination
     if (move_uploaded_file($file, $destination)) {
-      $sql="update  tblcompany set companylogo=:filename ";
+      $sql="update  wowcompany set companylogo=:filename ";
       $query = $dbh->prepare($sql);
       $query->bindParam(':filename',$filename,PDO::PARAM_STR);
       $query->execute();
@@ -55,7 +55,7 @@ if (strlen($_SESSION['odmsaid']==0))
                  <div class="card-body">
                   <form class="form-horizontal row-fluid" name="insertproduct" method="post" enctype="multipart/form-data">
                     <?php
-                    $sql="SELECT * from  tblcompany ";
+                    $sql="SELECT * from  wowcompany ";
                     $query = $dbh -> prepare($sql);
                     $query->bindParam(':aid',$companyname,PDO::PARAM_STR);
                     $query->execute();

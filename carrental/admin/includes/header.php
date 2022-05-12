@@ -1,7 +1,7 @@
  <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
   <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
     <?php
-    $sql="SELECT * from  tblcompany ";
+    $sql="SELECT * from  wowcompany ";
     $query = $dbh -> prepare($sql);
     $query->execute();
     $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -44,7 +44,7 @@
       <li class="nav-item nav-profile dropdown">
         <?php
         $aid=$_SESSION['odmsaid'];
-        $sql="SELECT * from  tbladmin where ID=:aid";
+        $sql="SELECT * from  wowadmin where ID=:aid";
         $query = $dbh -> prepare($sql);
         $query->bindParam(':aid',$aid,PDO::PARAM_STR);
         $query->execute();
@@ -94,7 +94,7 @@
           </li>
           <li class="nav-item dropdown">
             <?php 
-            $sql ="SELECT * from tblbooking where Status='0'  ORDER BY id DESC ";
+            $sql ="SELECT * from wowbooking where Status='0'  ORDER BY id DESC ";
             $query = $dbh -> prepare($sql);
             $query->execute();
             $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -109,7 +109,7 @@
               <h6 class="p-3 mb-0">You have <?php echo htmlentities($totalnewbooking);?> new notification</h6>
               <div class="dropdown-divider"></div>
               <?php
-              $sql ="SELECT tblbooking.userEmail,tblvehicles.VehiclesTitle from tblbooking join tblvehicles on tblbooking.VehicleId=tblvehicles.id  where tblbooking.Status='0' ORDER BY tblbooking.id DESC LIMIT 3";
+              $sql ="SELECT wowbooking.userEmail,wowvehicles.VehiclesTitle from wowbooking join wowvehicles on wowbooking.VehicleId=wowvehicles.id  where wowbooking.Status='0' ORDER BY wowbooking.id DESC LIMIT 3";
               $query = $dbh -> prepare($sql);
               $query->execute();
               $results=$query->fetchAll(PDO::FETCH_OBJ);

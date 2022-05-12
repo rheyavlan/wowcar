@@ -4,7 +4,7 @@ check_login();
 if(isset($_POST['save']))
 {
   $brandname=$_POST['brandname'];
-  $sql="insert into tblbrands(BrandName)values(:brandname)";
+  $sql="insert into wowbrands(BrandName)values(:brandname)";
   $query=$dbh->prepare($sql);
   $query->bindParam(':brandname',$brandname,PDO::PARAM_STR);
   $query->execute();
@@ -22,7 +22,7 @@ if(isset($_POST['save']))
 if(isset($_GET['del']))
 {
   $id=$_GET['del'];
-  $sql = "delete from tblbrands  WHERE id=:id";
+  $sql = "delete from wowbrands  WHERE id=:id";
   $query = $dbh->prepare($sql);
   $query -> bindParam(':id',$id, PDO::PARAM_STR);
   $query -> execute();
@@ -102,7 +102,7 @@ if(isset($_GET['del']))
                   </thead>
                   <tbody>
                     <?php
-                    $sql = "SELECT * from  tblbrands ";
+                    $sql = "SELECT * from  wowbrands ";
                     $query = $dbh -> prepare($sql);
                     $query->execute();
                     $results=$query->fetchAll(PDO::FETCH_OBJ);

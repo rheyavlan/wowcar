@@ -52,7 +52,7 @@ else{
   <main id="main">
    <?php 
    $useremail=$_SESSION['login'];
-   $sql = "SELECT * from tblusers where EmailId=:useremail";
+   $sql = "SELECT * from wowusers where EmailId=:useremail";
    $query = $dbh -> prepare($sql);
    $query -> bindParam(':useremail',$useremail, PDO::PARAM_STR);
    $query->execute();
@@ -87,7 +87,7 @@ else{
                   <ul class="vehicle_listing">
                     <?php 
                     $useremail=$_SESSION['login'];
-                    $sql = "SELECT tblvehicles.Vimage1 as Vimage1,tblvehicles.VehiclesTitle,tblvehicles.id as vid,tblbrands.BrandName,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.Status,tblvehicles.PricePerDay,DATEDIFF(tblbooking.ToDate,tblbooking.FromDate) as totaldays,tblbooking.BookingNumber  from tblbooking join tblvehicles on tblbooking.VehicleId=tblvehicles.id join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblbooking.userEmail=:useremail";
+                    $sql = "SELECT wowvehicles.Vimage1 as Vimage1,wowvehicles.VehiclesTitle,wowvehicles.id as vid,wowbrands.BrandName,wowbooking.FromDate,wowbooking.ToDate,wowbooking.message,wowbooking.Status,wowvehicles.PricePerDay,DATEDIFF(wowbooking.ToDate,wowbooking.FromDate) as totaldays,wowbooking.BookingNumber  from wowbooking join wowvehicles on wowbooking.VehicleId=wowvehicles.id join wowbrands on wowbrands.id=wowvehicles.VehiclesBrand where wowbooking.userEmail=:useremail";
                     $query = $dbh -> prepare($sql);
                     $query-> bindParam(':useremail', $useremail, PDO::PARAM_STR);
                     $query->execute();

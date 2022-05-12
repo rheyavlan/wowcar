@@ -4,7 +4,7 @@ error_reporting(0);
 include('includes/dbconnection.php');
 if(!empty($_POST["companyname"])) {
     $companyname= $_POST["companyname"];
-    $sql ="SELECT companyname FROM tblcompany WHERE companyname=:companyname";
+    $sql ="SELECT companyname FROM wowcompany WHERE companyname=:companyname";
     $query= $dbh -> prepare($sql);
     $query-> bindParam(':companyname', $companyname, PDO::PARAM_STR);
     $query-> execute();
@@ -21,7 +21,7 @@ if(!empty($_POST["companyname"])) {
             $companyname=$_POST['companyname'];
             $permision='Admin';
             $confirmpassword=md5($_POST['confirmpassword']); 
-            $sql="INSERT INTO  tbladmin(AdminName,UserName,CompanyName,Password) VALUES(:permision,:username,:companyname,:confirmpassword)";
+            $sql="INSERT INTO  wowadmin(AdminName,UserName,CompanyName,Password) VALUES(:permision,:username,:companyname,:confirmpassword)";
             $query = $dbh->prepare($sql);
             $query->bindParam(':username',$username,PDO::PARAM_STR);
             $query->bindParam(':companyname',$companyname,PDO::PARAM_STR);
@@ -35,7 +35,7 @@ if(!empty($_POST["companyname"])) {
                 $companyname=$_POST['companyname'];
                 $companyemail=$_POST['companyemail'];
                 $country=$_POST['country'];
-                $sql="INSERT INTO  tblcompany(regno,companyname,companyemail,country) VALUES(:regno,:companyname,:companyemail,:country)";
+                $sql="INSERT INTO  wowcompany(regno,companyname,companyemail,country) VALUES(:regno,:companyname,:companyemail,:country)";
                 $query = $dbh->prepare($sql);
                 $query->bindParam(':regno',$regno,PDO::PARAM_STR);
                 $query->bindParam(':companyname',$companyname,PDO::PARAM_STR);

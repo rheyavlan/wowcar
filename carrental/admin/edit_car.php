@@ -25,7 +25,7 @@ if(isset($_POST['save']))
   $leatherseats=$_POST['leatherseats'];
   $id=intval($_GET['id']);
 
-  $sql="update tblvehicles set VehiclesTitle=:vehicletitle,VehiclesBrand=:brand,VehiclesOverview=:vehicleoverview,PricePerDay=:priceperday,FuelType=:fueltype,ModelYear=:modelyear,SeatingCapacity=:seatingcapacity,AirConditioner=:airconditioner,PowerDoorLocks=:powerdoorlocks,AntiLockBrakingSystem=:antilockbrakingsys,BrakeAssist=:brakeassist,PowerSteering=:powersteering,DriverAirbag=:driverairbag,PassengerAirbag=:passengerairbag,PowerWindows=:powerwindow,CDPlayer=:cdplayer,CentralLocking=:centrallocking,CrashSensor=:crashcensor,LeatherSeats=:leatherseats where id=:id ";
+  $sql="update wowvehicles set VehiclesTitle=:vehicletitle,VehiclesBrand=:brand,VehiclesOverview=:vehicleoverview,PricePerDay=:priceperday,FuelType=:fueltype,ModelYear=:modelyear,SeatingCapacity=:seatingcapacity,AirConditioner=:airconditioner,PowerDoorLocks=:powerdoorlocks,AntiLockBrakingSystem=:antilockbrakingsys,BrakeAssist=:brakeassist,PowerSteering=:powersteering,DriverAirbag=:driverairbag,PassengerAirbag=:passengerairbag,PowerWindows=:powerwindow,CDPlayer=:cdplayer,CentralLocking=:centrallocking,CrashSensor=:crashcensor,LeatherSeats=:leatherseats where id=:id ";
   $query = $dbh->prepare($sql);
   $query->bindParam(':vehicletitle',$vehicletitle,PDO::PARAM_STR);
   $query->bindParam(':brand',$brand,PDO::PARAM_STR);
@@ -81,7 +81,7 @@ if(isset($_POST['save']))
               } ?>
               <?php 
               $id=intval($_GET['id']);
-              $sql ="SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblvehicles.id=:id";
+              $sql ="SELECT wowvehicles.*,wowbrands.BrandName,wowbrands.id as bid from wowvehicles join wowbrands on wowbrands.id=wowvehicles.VehiclesBrand where wowvehicles.id=:id";
               $query = $dbh -> prepare($sql);
               $query-> bindParam(':id', $id, PDO::PARAM_STR);
               $query->execute();
@@ -99,7 +99,7 @@ if(isset($_POST['save']))
                         <select  name="brand"  class="form-control" required>
                           <option value="<?php echo htmlentities($result->bid);?>"><?php echo htmlentities($bdname=$result->BrandName); ?> </option>
                           <?php
-                          $sql="SELECT * from  tblbrands";
+                          $sql="SELECT * from  wowbrands";
                           $query = $dbh -> prepare($sql);
                           $query->execute();
                           $results=$query->fetchAll(PDO::FETCH_OBJ);

@@ -10,7 +10,7 @@ if(isset($_POST['saveupdates']))
   $lName2=$_POST['lastname2'];
   $mobno2=$_POST['phone2'];
   $email2=$_POST['email2'];
-  $sql4="update tbladmin set FirstName=:firstname2,LastName=:lastname2,MobileNumber=:mobilenumber2,Email=:email2 where ID=:aid";
+  $sql4="update wowadmin set FirstName=:firstname2,LastName=:lastname2,MobileNumber=:mobilenumber2,Email=:email2 where ID=:aid";
   $query4 = $dbh->prepare($sql4);
   $query4->bindParam(':firstname2',$fName2,PDO::PARAM_STR);
   $query4->bindParam(':lastname2',$lName2,PDO::PARAM_STR);
@@ -30,7 +30,7 @@ if(isset($_POST['saveupdates']))
   <form class="forms-sample" method="post" enctype="multipart/form-data" class="form-horizontal">
     <?php
     $eid=$_POST['edit_id'];
-    $sql="SELECT * from  tbladmin where tbladmin.ID=:eid";
+    $sql="SELECT * from  wowadmin where wowadmin.ID=:eid";
     $query = $dbh -> prepare($sql);
     $query-> bindParam(':eid', $eid, PDO::PARAM_STR);
     $query->execute();
