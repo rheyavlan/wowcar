@@ -6,6 +6,7 @@ $fname=$_POST['fullname'];
 $email=$_POST['emailid']; 
 $mobile=$_POST['mobileno'];
 $custType=$POST['cust_type'];
+echo "Cust type = $custType";
 $password=md5($_POST['password']); 
 $sql="INSERT INTO  wowusers(FullName,EmailId,ContactNo,Password,custType) VALUES(:fname,:email,:mobile,:password,:custType)";
 $query = $dbh->prepare($sql);
@@ -88,10 +89,10 @@ return true;
                 
                 <div class="form-group">
                  <p>Customer Type</p>
-                   <input type="radio" id="individual" name="cust_type" value="I">
+                   <input type="radio" id="I" name="cust_type" value="I">
                    <label for="individual">Individual</label><br>
-                   <input type="radio" id="corporate" name="cust_type" value="C">
-                   <label for="css">Corporate</label><br>
+                   <input type="radio" id="C" name="cust_type" value="C">
+                   <label for="corporate">Corporate</label><br>
                </div>
 
                 <div class="form-group">
