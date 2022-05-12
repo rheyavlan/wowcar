@@ -407,10 +407,10 @@ if(isset($_POST['submit']))
                   ?>
                 </select>
                 
-
+                <!--
                 <input type="text" id="discount" name="discount" placeholder="Type discount coupon code" style="width:20%">
                 <input type="submit" class="btn" style="background-color: orange;"  name="apply" value="Apply"></br>
-
+                -->
 
                 <!-- <table class="table align-items-center table-flush table-hover table-bordered" id="dataTableHover">
                   <thead>
@@ -457,7 +457,7 @@ if(isset($_POST['submit']))
                     <h6><b><?php echo htmlentities($disc->DISC_PERC);?>% OFF YOUR PURCHASE</b></h6>
                   </div>
                   <div class="coupponcontainer">
-                    <p>Use Promo Code: <span class="promo"><?php echo htmlentities($disc->DISC_CODE);?></span></p>
+                    <p>Used Promo Code: <span class="promo"><?php echo htmlentities($disc->DISC_CODE);?></span></p>
                     <p class="expire">Expires: <?php  echo htmlentities(date("d M Y", strtotime($disc->DISC_EXP_DT)));?></p>
                   </div>
                 </div>
