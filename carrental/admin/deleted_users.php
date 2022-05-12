@@ -5,7 +5,7 @@ include('includes/dbconnection.php');
 if(isset($_GET['restoreid']))
 {
     $rid=intval($_GET['restoreid']);
-    $sql="update tbladmin set Status='1' where ID='$rid'";
+    $sql="update wowadmin set Status='1' where ID='$rid'";
     $query=$dbh->prepare($sql);
     $query->bindParam(':rid',$rid,PDO::PARAM_STR);
     $query->execute();
@@ -33,7 +33,7 @@ if(isset($_GET['restoreid']))
         </thead>
         <tbody>
             <?php
-            $sql="SELECT * from tbladmin where Status='0'  ";
+            $sql="SELECT * from wowadmin where Status='0'  ";
             $query = $dbh -> prepare($sql);
             $query->execute();
             $results=$query->fetchAll(PDO::FETCH_OBJ);

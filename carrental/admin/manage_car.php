@@ -4,7 +4,7 @@ check_login();
 if(isset($_REQUEST['del']))
   {
 $delid=intval($_GET['del']);
-$sql = "delete from tblvehicles  WHERE  id=:delid";
+$sql = "delete from wowvehicles  WHERE  id=:delid";
 $query = $dbh->prepare($sql);
 $query -> bindParam(':delid',$delid, PDO::PARAM_STR);
 $query -> execute();
@@ -50,7 +50,7 @@ $query -> execute();
                     </thead>
                     <tbody>
                       <?php
-                      $sql = "SELECT tblvehicles.VehiclesTitle,tblvehicles.Vimage1,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.veh_odo_lim,tblvehicles.veh_om_fees,tblvehicles.id from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand";
+                      $sql = "SELECT wowvehicles.VehiclesTitle,wowvehicles.Vimage1,wowbrands.BrandName,wowvehicles.PricePerDay,wowvehicles.FuelType,wowvehicles.ModelYear,wowvehicles.veh_odo_lim,wowvehicles.veh_om_fees,wowvehicles.id from wowvehicles join wowbrands on wowbrands.id=wowvehicles.VehiclesBrand";
                       $query = $dbh -> prepare($sql);
                       $query->execute();
                       $results=$query->fetchAll(PDO::FETCH_OBJ);

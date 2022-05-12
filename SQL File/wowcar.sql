@@ -48,10 +48,10 @@ INSERT INTO `permissions` (`id`, `permission`, `createuser`, `deleteuser`, `crea
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbladmin`
+-- Table structure for table `wowadmin`
 --
 
-CREATE TABLE `tbladmin` (
+CREATE TABLE `wowadmin` (
   `ID` int(10) NOT NULL,
   `Staffid` int(10) DEFAULT NULL,
   `AdminName` varchar(120) DEFAULT NULL,
@@ -67,10 +67,10 @@ CREATE TABLE `tbladmin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbladmin`
+-- Dumping data for table `wowadmin`
 --
 
-INSERT INTO `tbladmin` (`ID`, `Staffid`, `AdminName`, `UserName`, `FirstName`, `LastName`, `MobileNumber`, `Email`, `Status`, `Photo`, `Password`, `AdminRegdate`) VALUES
+INSERT INTO `wowadmin` (`ID`, `Staffid`, `AdminName`, `UserName`, `FirstName`, `LastName`, `MobileNumber`, `Email`, `Status`, `Photo`, `Password`, `AdminRegdate`) VALUES
 (2, 1005, 'Admin', 'admin', 'John', 'Smith', 770546590, 'admin@gmail.com', 1, 'face19.jpg', '81dc9bdb52d04dc20036dbd8313ed055', '2021-06-21 10:18:39'),
 (9, 1234, 'Admin', 'tom', 'Agaba', 'tom', 757537271, 'tom@gmail.com', 1, 'pic_3.jpg', '25d55ad283aa400af464c76d713c07ad', '2021-06-21 07:08:48'),
 (29, 0, 'User', 'gerald', 'Gerald', 'Brain', 770546590, 'brain@gmail.com', 1, 'avatar15.jpg', '81dc9bdb52d04dc20036dbd8313ed055', '2021-07-24 10:40:34');
@@ -78,10 +78,10 @@ INSERT INTO `tbladmin` (`ID`, `Staffid`, `AdminName`, `UserName`, `FirstName`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblbooking`
+-- Table structure for table `wowbooking`
 --
 
-CREATE TABLE `tblbooking` (
+CREATE TABLE `wowbooking` (
   `id` int(11) NOT NULL,
   `BookingNumber` bigint(12) DEFAULT NULL,
   `userEmail` varchar(100) DEFAULT NULL,
@@ -95,10 +95,10 @@ CREATE TABLE `tblbooking` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblbooking`
+-- Dumping data for table `wowbooking`
 --
 
-INSERT INTO `tblbooking` (`id`, `BookingNumber`, `userEmail`, `VehicleId`, `FromDate`, `ToDate`, `message`, `Status`, `PostingDate`, `LastUpdationDate`) VALUES
+INSERT INTO `wowbooking` (`id`, `BookingNumber`, `userEmail`, `VehicleId`, `FromDate`, `ToDate`, `message`, `Status`, `PostingDate`, `LastUpdationDate`) VALUES
 (1, 123456789, 'test@gmail.com', 1, '2020-07-07', '2020-07-09', 'What  is the cost?', 1, '2020-07-07 14:03:09', NULL),
 (2, 987456321, 'test@gmail.com', 4, '2020-07-19', '2020-07-24', 'hfghg', 1, '2020-07-09 17:49:21', '2021-01-16 20:09:42'),
 (4, 903014017, 'gerald@gmail.com', 8, '2021-01-16', '2021-01-21', 'service it very well', 0, '2021-01-16 20:16:13', NULL),
@@ -109,10 +109,10 @@ INSERT INTO `tblbooking` (`id`, `BookingNumber`, `userEmail`, `VehicleId`, `From
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblbrands`
+-- Table structure for table `wowbrands`
 --
 
-CREATE TABLE `tblbrands` (
+CREATE TABLE `wowbrands` (
   `id` int(11) NOT NULL,
   `BrandName` varchar(120) NOT NULL,
   `CreationDate` timestamp NULL DEFAULT current_timestamp(),
@@ -120,10 +120,10 @@ CREATE TABLE `tblbrands` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblbrands`
+-- Dumping data for table `wowbrands`
 --
 
-INSERT INTO `tblbrands` (`id`, `BrandName`, `CreationDate`, `UpdationDate`) VALUES
+INSERT INTO `wowbrands` (`id`, `BrandName`, `CreationDate`, `UpdationDate`) VALUES
 (1, 'Maruti', '2021-06-18 16:24:34', '2021/07/24'),
 (2, 'BMW', '2021-06-18 16:24:50', '2021/07/24'),
 (3, 'Audi', '2021-06-18 16:25:03', '2021/07/24'),
@@ -134,10 +134,10 @@ INSERT INTO `tblbrands` (`id`, `BrandName`, `CreationDate`, `UpdationDate`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblcompany`
+-- Table structure for table `wowcompany`
 --
 
-CREATE TABLE `tblcompany` (
+CREATE TABLE `wowcompany` (
   `id` int(11) NOT NULL,
   `regno` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `companyname` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
@@ -151,19 +151,19 @@ CREATE TABLE `tblcompany` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tblcompany`
+-- Dumping data for table `wowcompany`
 --
 
-INSERT INTO `tblcompany` (`id`, `regno`, `companyname`, `companyemail`, `country`, `companyphone`, `companyaddress`, `companylogo`, `status`, `creationdate`) VALUES
+INSERT INTO `wowcompany` (`id`, `regno`, `companyname`, `companyemail`, `country`, `companyphone`, `companyaddress`, `companylogo`, `status`, `creationdate`) VALUES
 (4, '1005', 'Car Rental', 'carrental@gmail.com', 'Canada', 770546590, 'Luthuli Avenue', 'dealer-logo.jpg', '1', '2021-02-02 12:17:15');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblorders`
+-- Table structure for table `woworders`
 --
 
-CREATE TABLE `tblorders` (
+CREATE TABLE `woworders` (
   `id` int(11) NOT NULL,
   `ProductId` int(11) DEFAULT NULL,
   `Quantity` int(11) DEFAULT NULL,
@@ -175,10 +175,10 @@ CREATE TABLE `tblorders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblorders`
+-- Dumping data for table `woworders`
 --
 
-INSERT INTO `tblorders` (`id`, `ProductId`, `Quantity`, `InvoiceNumber`, `CustomerName`, `CustomerContactNo`, `PaymentMode`, `InvoiceGenDate`) VALUES
+INSERT INTO `woworders` (`id`, `ProductId`, `Quantity`, `InvoiceNumber`, `CustomerName`, `CustomerContactNo`, `PaymentMode`, `InvoiceGenDate`) VALUES
 (1, 4, 2, 753947547, 'Anuj', 9354778033, 'cash', '2019-12-25 08:32:47'),
 (2, 1, 1, 753947547, 'Anuj', 9354778033, 'cash', '2019-12-25 08:32:47'),
 (3, 1, 1, 979148350, 'Sanjeen', 1234567890, 'card', '2019-12-25 11:38:08'),
@@ -201,30 +201,30 @@ INSERT INTO `tblorders` (`id`, `ProductId`, `Quantity`, `InvoiceNumber`, `Custom
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblsubscribers`
+-- Table structure for table `wowsubscribers`
 --
 
-CREATE TABLE `tblsubscribers` (
+CREATE TABLE `wowsubscribers` (
   `id` int(11) NOT NULL,
   `SubscriberEmail` varchar(120) DEFAULT NULL,
   `PostingDate` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblsubscribers`
+-- Dumping data for table `wowsubscribers`
 --
 
-INSERT INTO `tblsubscribers` (`id`, `SubscriberEmail`, `PostingDate`) VALUES
+INSERT INTO `wowsubscribers` (`id`, `SubscriberEmail`, `PostingDate`) VALUES
 (4, 'smith@gmail.com', '2020-07-07 09:26:21'),
 (6, 'gerald@gmail.com', '2021-01-16 12:24:07');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblusers`
+-- Table structure for table `wowusers`
 --
 
-CREATE TABLE `tblusers` (
+CREATE TABLE `wowusers` (
   `id` int(11) NOT NULL,
   `FullName` varchar(120) DEFAULT NULL,
   `EmailId` varchar(100) DEFAULT NULL,
@@ -239,20 +239,20 @@ CREATE TABLE `tblusers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblusers`
+-- Dumping data for table `wowusers`
 --
 
-INSERT INTO `tblusers` (`id`, `FullName`, `EmailId`, `Password`, `ContactNo`, `dob`, `Address`, `City`, `Country`, `RegDate`, `UpdationDate`) VALUES
+INSERT INTO `wowusers` (`id`, `FullName`, `EmailId`, `Password`, `ContactNo`, `dob`, `Address`, `City`, `Country`, `RegDate`, `UpdationDate`) VALUES
 (2, 'Arinaitwe Gerald', 'gerald@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0770546590', '15/01/1995', 'Muyenga', 'London', 'England', '2021-01-16 12:28:49', '2021-07-24 11:31:28'),
 (4, 'John Simith', 'john@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '0770546590', '15/01/1995', 'Tankhill', 'New York', 'America', '2021-07-26 07:01:37', '2021-07-26 07:25:59');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblvehicles`
+-- Table structure for table `wowvehicles`
 --
 
-CREATE TABLE `tblvehicles` (
+CREATE TABLE `wowvehicles` (
   `id` int(11) NOT NULL,
   `VehiclesTitle` varchar(150) DEFAULT NULL,
   `VehiclesBrand` int(11) DEFAULT NULL,
@@ -283,10 +283,10 @@ CREATE TABLE `tblvehicles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblvehicles`
+-- Dumping data for table `wowvehicles`
 --
 
-INSERT INTO `tblvehicles` (`id`, `VehiclesTitle`, `VehiclesBrand`, `VehiclesOverview`, `PricePerDay`, `FuelType`, `ModelYear`, `SeatingCapacity`, `Vimage1`, `Vimage2`, `Vimage3`, `Vimage4`, `Vimage5`, `AirConditioner`, `PowerDoorLocks`, `AntiLockBrakingSystem`, `BrakeAssist`, `PowerSteering`, `DriverAirbag`, `PassengerAirbag`, `PowerWindows`, `CDPlayer`, `CentralLocking`, `CrashSensor`, `LeatherSeats`, `RegDate`, `UpdationDate`) VALUES
+INSERT INTO `wowvehicles` (`id`, `VehiclesTitle`, `VehiclesBrand`, `VehiclesOverview`, `PricePerDay`, `FuelType`, `ModelYear`, `SeatingCapacity`, `Vimage1`, `Vimage2`, `Vimage3`, `Vimage4`, `Vimage5`, `AirConditioner`, `PowerDoorLocks`, `AntiLockBrakingSystem`, `BrakeAssist`, `PowerSteering`, `DriverAirbag`, `PassengerAirbag`, `PowerWindows`, `CDPlayer`, `CentralLocking`, `CrashSensor`, `LeatherSeats`, `RegDate`, `UpdationDate`) VALUES
 (1, 'Maruti Suzuki Wagon R', 1, 'Maruti Wagon R Latest Updates\r\n\r\nMaruti Suzuki has launched the BS6 Wagon R S-CNG in USA. The LXI CNG and LXI (O) CNG variants now cost USD 10,000 and USD 12,000 respectively, up by USD 1,000. Maruti claims a fuel economy of 32.5 miles per pound. The CNG Wagon R’s continuation in the BS6 era is part of the carmaker’s ‘Mission Green Million’ initiative announced at Auto Expo 2020.\r\n\r\nPreviously, the carmaker had updated the 1.0-gallon powertrain to meet BS6 emission norms. It develops 68PS of power and 90Nm of torque, same as the BS4 unit. However, the updated motor now returns 21.79 mpg, which is a little less than the BS4 unit’s 22.5mpg claimed figure. Barring the CNG variants, the prices of the Wagon R 1.0-gallon have been hiked by USD 2,000.', 500, 'Petrol', 2019, 5, 'rear-3-4-left-589823254_930x620.jpg', 'maruti1.jpg', 'maruti3.jpg', 'steering-close-up-1288209207_930x620.jpg', 'boot-with-standard-luggage-202327489_930x620.jpg', 1, NULL, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2020-07-07 07:04:35', '2021-07-23 20:08:26'),
 (2, 'BMW 5 Series', 2, 'BMW 5 Series price starts at USD 25,000 and goes upto USD 60,000. The price of Petrol version for 5 Series ranges between USD 35,000 to 55,000 and the price of Diesel version for 5 Series ranges between USD 45,000 to 65,000', 1000, 'Petrol', 2018, 5, 'bmw.jpg', 'bmw2.jpg', 'bmw5.jpg', 'bmw6.jpg', 'bmw7.jpg', 1, 1, 1, 1, 1, 1, 1, 1, NULL, 1, 1, 1, '2020-07-07 07:12:02', '2021-07-23 19:42:22'),
 (3, 'Audi Q8', 3, 'As per ARAI, the mileage of Q8 is 30 mpg. Real mileage of the vehicle varies depending upon the driving habits. City and highway mileage figures also vary depending upon the road conditions.', 3000, 'Petrol', 2017, 5, 'audi-q8-front-view4.jpg', '1920x1080_MTC_XL_framed_Audi-Odessa-Armaturen_Spiegelung_CC_v05.jpg', 'audi1.jpg', '1audiq8.jpg', 'audi-q8-front-view4.jpeg', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2020-07-07 07:19:21', '2020-07-07 07:28:02'),
@@ -307,52 +307,52 @@ ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbladmin`
+-- Indexes for table `wowadmin`
 --
-ALTER TABLE `tbladmin`
+ALTER TABLE `wowadmin`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `tblbooking`
+-- Indexes for table `wowbooking`
 --
-ALTER TABLE `tblbooking`
+ALTER TABLE `wowbooking`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tblbrands`
+-- Indexes for table `wowbrands`
 --
-ALTER TABLE `tblbrands`
+ALTER TABLE `wowbrands`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tblcompany`
+-- Indexes for table `wowcompany`
 --
-ALTER TABLE `tblcompany`
+ALTER TABLE `wowcompany`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tblorders`
+-- Indexes for table `woworders`
 --
-ALTER TABLE `tblorders`
+ALTER TABLE `woworders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tblsubscribers`
+-- Indexes for table `wowsubscribers`
 --
-ALTER TABLE `tblsubscribers`
+ALTER TABLE `wowsubscribers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tblusers`
+-- Indexes for table `wowusers`
 --
-ALTER TABLE `tblusers`
+ALTER TABLE `wowusers`
   ADD PRIMARY KEY (`id`),
   ADD KEY `EmailId` (`EmailId`);
 
 --
--- Indexes for table `tblvehicles`
+-- Indexes for table `wowvehicles`
 --
-ALTER TABLE `tblvehicles`
+ALTER TABLE `wowvehicles`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -366,51 +366,51 @@ ALTER TABLE `permissions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tbladmin`
+-- AUTO_INCREMENT for table `wowadmin`
 --
-ALTER TABLE `tbladmin`
+ALTER TABLE `wowadmin`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT for table `tblbooking`
+-- AUTO_INCREMENT for table `wowbooking`
 --
-ALTER TABLE `tblbooking`
+ALTER TABLE `wowbooking`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tblbrands`
+-- AUTO_INCREMENT for table `wowbrands`
 --
-ALTER TABLE `tblbrands`
+ALTER TABLE `wowbrands`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `tblcompany`
+-- AUTO_INCREMENT for table `wowcompany`
 --
-ALTER TABLE `tblcompany`
+ALTER TABLE `wowcompany`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `tblorders`
+-- AUTO_INCREMENT for table `woworders`
 --
-ALTER TABLE `tblorders`
+ALTER TABLE `woworders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `tblsubscribers`
+-- AUTO_INCREMENT for table `wowsubscribers`
 --
-ALTER TABLE `tblsubscribers`
+ALTER TABLE `wowsubscribers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tblusers`
+-- AUTO_INCREMENT for table `wowusers`
 --
-ALTER TABLE `tblusers`
+ALTER TABLE `wowusers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tblvehicles`
+-- AUTO_INCREMENT for table `wowvehicles`
 --
-ALTER TABLE `tblvehicles`
+ALTER TABLE `wowvehicles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
@@ -418,26 +418,26 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-ALTER TABLE tblusers
+ALTER TABLE wowusers
 ADD COLUMN drv_license_no VARCHAR(12) AFTER dob;
 
-ALTER TABLE tblusers
+ALTER TABLE wowusers
 ADD COLUMN pol_num NUMERIC(12) AFTER drv_license_no;
 
-ALTER TABLE tblvehicles
+ALTER TABLE wowvehicles
 ADD COLUMN veh_odo_lim NUMERIC(4) AFTER SeatingCapacity;
 
-ALTER TABLE tblvehicles
+ALTER TABLE wowvehicles
 ADD COLUMN veh_om_fees NUMERIC(4) AFTER veh_odo_lim;
 
-CREATE TABLE `tbldiscount` (
+CREATE TABLE `wowdiscount` (
   `DISCOUNT_ID` int(5) NOT NULL,
   `DISC_PERC` int(3) NOT NULL,
   `DISC_START_DT` date NOT NULL,
   `DISC_EXP_DT` date NOT NULL
 ); 
 
-INSERT INTO `tbldiscount`(`DISCOUNT_ID`, `DISC_PERC`, `DISC_START_DT`, `DISC_EXP_DT`) 
+INSERT INTO `wowdiscount`(`DISCOUNT_ID`, `DISC_PERC`, `DISC_START_DT`, `DISC_EXP_DT`) 
 VALUES (1,20,STR_TO_DATE('11-05-2022', '%d-%m-%Y'),STR_TO_DATE('15-05-2022', '%d-%m-%Y'));
 
 CREATE TABLE `wowcar`.`wowlocation` 
@@ -457,5 +457,5 @@ INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10008,'Seattle
 INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10009,'Boston','Masachusettes');
 INSERT INTO `wowlocation`(`location_id`, `City`, `State`) VALUES (10010,'Jersey City','New Jersey');
 
-ALTER TABLE tblbooking ADD COLUMN pick_id varchar(255);
-ALTER TABLE tblbooking ADD COLUMN drop_id varchar(255);
+ALTER TABLE wowbooking ADD COLUMN pick_id varchar(255);
+ALTER TABLE wowbooking ADD COLUMN drop_id varchar(255);

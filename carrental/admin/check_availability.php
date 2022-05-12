@@ -8,7 +8,7 @@ if(!empty($_POST["emailid"])) {
     echo "error : You did not enter a valid email.";
   }
   else {
-    $sql ="SELECT Email FROM tbladmin WHERE Email=:email";
+    $sql ="SELECT Email FROM wowadmin WHERE Email=:email";
     $query= $dbh -> prepare($sql);
     $query-> bindParam(':email', $email, PDO::PARAM_STR);
     $query-> execute();
@@ -29,7 +29,7 @@ if(!empty($_POST["emailid"])) {
 if(!empty($_POST["companyname"])) {
   $companyname= $_POST["companyname"];
 
-  $sql ="SELECT companyname FROM tblcompany WHERE companyname=:companyname";
+  $sql ="SELECT companyname FROM wowcompany WHERE companyname=:companyname";
   $query= $dbh -> prepare($sql);
   $query-> bindParam(':companyname', $companyname, PDO::PARAM_STR);
   $query-> execute();
@@ -49,7 +49,7 @@ if(!empty($_POST["companyname"])) {
 if(!empty($_POST["fullname"])) {
   $fullname= $_POST["fullname"];
   
-  $sql ="SELECT UserName FROM tbladmin WHERE UserName=:fullname";
+  $sql ="SELECT UserName FROM wowadmin WHERE UserName=:fullname";
   $query= $dbh -> prepare($sql);
   $query-> bindParam(':fullname', $fullname, PDO::PARAM_STR);
   $query-> execute();

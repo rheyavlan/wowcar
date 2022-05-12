@@ -15,7 +15,7 @@ if(isset($_POST['submit']))
   $productname=$_POST['productName'];
   $productimage1=$_FILES["productimage1"]["name"];
   move_uploaded_file($_FILES["productimage1"]["tmp_name"],"profileimages/".$_FILES["productimage1"]["name"]);
-  $sql="update  tbladmin set Photo=:productimage1 where ID=:aid";
+  $sql="update  wowadmin set Photo=:productimage1 where ID=:aid";
   $query = $dbh->prepare($sql);
   $query->bindParam(':productimage1',$productimage1,PDO::PARAM_STR);
   $query->bindParam(':aid',$pid,PDO::PARAM_STR);
@@ -53,7 +53,7 @@ if(isset($_POST['submit']))
                     <form class="form-horizontal row-fluid" name="insertproduct" method="post" enctype="multipart/form-data">
                       <?php
                       $adminid=$_SESSION['odmsaid'];
-                      $sql="SELECT * from  tbladmin where ID=:aid";
+                      $sql="SELECT * from  wowadmin where ID=:aid";
                       $query = $dbh -> prepare($sql);
                       $query->bindParam(':aid',$adminid,PDO::PARAM_STR);
                       $query->execute();

@@ -4,7 +4,7 @@ check_login();
 if(isset($_REQUEST['del']))
   {
 $delid=intval($_GET['del']);
-$sql = "delete from tblvehicles  WHERE  id=:delid";
+$sql = "delete from wowvehicles  WHERE  id=:delid";
 $query = $dbh->prepare($sql);
 $query -> bindParam(':delid',$delid, PDO::PARAM_STR);
 $query -> execute();
@@ -51,7 +51,7 @@ $query -> execute();
                     <tbody>
                       <?php
                      $status=0;
-                      $sql = "SELECT tblusers.FullName,tblbrands.BrandName,tblvehicles.VehiclesTitle,tblvehicles.Vimage1,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.VehicleId as vid,tblbooking.Status,tblbooking.PostingDate,tblbooking.id,tblbooking.BookingNumber  from tblbooking join tblvehicles on tblvehicles.id=tblbooking.VehicleId join tblusers on tblusers.EmailId=tblbooking.userEmail join tblbrands on tblvehicles.VehiclesBrand=tblbrands.id where tblbooking.Status=:status";
+                      $sql = "SELECT wowusers.FullName,wowbrands.BrandName,wowvehicles.VehiclesTitle,wowvehicles.Vimage1,wowbooking.FromDate,wowbooking.ToDate,wowbooking.message,wowbooking.VehicleId as vid,wowbooking.Status,wowbooking.PostingDate,wowbooking.id,wowbooking.BookingNumber  from wowbooking join wowvehicles on wowvehicles.id=wowbooking.VehicleId join wowusers on wowusers.EmailId=wowbooking.userEmail join wowbrands on wowvehicles.VehiclesBrand=wowbrands.id where wowbooking.Status=:status";
                       $query = $dbh -> prepare($sql);
                       $query -> bindParam(':status',$status, PDO::PARAM_STR);
                       $query->execute();

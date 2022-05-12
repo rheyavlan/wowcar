@@ -54,7 +54,7 @@ error_reporting(0);
                   <div class="sorting-count">
                     <?php 
                     //Query for Listing count
-                    $sql = "SELECT id from tblvehicles";
+                    $sql = "SELECT id from wowvehicles";
                     $query = $dbh -> prepare($sql);
                     $query->bindParam(':vhid',$vhid, PDO::PARAM_STR);
                     $query->execute();
@@ -65,7 +65,7 @@ error_reporting(0);
                   </div>
                 </div>
 
-                <?php $sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand order by rand() ";
+                <?php $sql = "SELECT wowvehicles.*,wowbrands.BrandName,wowbrands.id as bid  from wowvehicles join wowbrands on wowbrands.id=wowvehicles.VehiclesBrand order by rand() ";
                 $query = $dbh -> prepare($sql);
                 $query->execute();
                 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -104,7 +104,7 @@ error_reporting(0);
                   </div>
                   <div class="recent_addedcars">
                     <ul>
-                      <?php $sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand order by id desc limit 4";
+                      <?php $sql = "SELECT wowvehicles.*,wowbrands.BrandName,wowbrands.id as bid  from wowvehicles join wowbrands on wowbrands.id=wowvehicles.VehiclesBrand order by id desc limit 4";
                       $query = $dbh -> prepare($sql);
                       $query->execute();
                       $results=$query->fetchAll(PDO::FETCH_OBJ);

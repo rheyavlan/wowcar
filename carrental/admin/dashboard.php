@@ -25,7 +25,7 @@ check_login();
                   <h4 class="font-weight-normal mb-3">Registered Users
                   </h4>
                   <?php 
-                  $sql ="SELECT id from tblusers ";
+                  $sql ="SELECT id from wowusers ";
                   $query = $dbh -> prepare($sql);
                   $query->execute();
                   $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -42,7 +42,7 @@ check_login();
                   <h4 class="font-weight-normal mb-3">Listed Vehicles 
                   </h4>
                   <?php 
-                  $sql1 ="SELECT id from tblvehicles ";
+                  $sql1 ="SELECT id from wowvehicles ";
                   $query1 = $dbh -> prepare($sql1);;
                   $query1->execute();
                   $results1=$query1->fetchAll(PDO::FETCH_OBJ);
@@ -59,7 +59,7 @@ check_login();
                   <h4 class="font-weight-normal mb-3">Total Bookings
                   </h4>
                   <?php 
-                  $sql2 ="SELECT id from tblbooking ";
+                  $sql2 ="SELECT id from wowbooking ";
                   $query2= $dbh -> prepare($sql2);
                   $query2->execute();
                   $results2=$query2->fetchAll(PDO::FETCH_OBJ);
@@ -76,7 +76,7 @@ check_login();
                   <h4 class="font-weight-normal mb-3">Total Brands
                   </h4>
                   <?php 
-                  $sql3 ="SELECT id from tblbrands ";
+                  $sql3 ="SELECT id from wowbrands ";
                   $query3= $dbh -> prepare($sql3);
                   $query3->execute();
                   $results3=$query3->fetchAll(PDO::FETCH_OBJ);

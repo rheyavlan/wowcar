@@ -7,7 +7,7 @@ if(isset($_POST['login']))
 {
     $username=$_POST['username'];
     $password=md5($_POST['password']);
-    $sql ="SELECT * FROM tbladmin WHERE UserName=:username and Password=:password";
+    $sql ="SELECT * FROM wowadmin WHERE UserName=:username and Password=:password";
     $query=$dbh->prepare($sql);
     $query-> bindParam(':username', $username, PDO::PARAM_STR);
     $query-> bindParam(':password', $password, PDO::PARAM_STR);
@@ -25,7 +25,7 @@ if(isset($_POST['login']))
             $get=$result->Status;
         }
         $aa= $_SESSION['odmsaid'];
-        $sql="SELECT * from tbladmin  where ID=:aa";
+        $sql="SELECT * from wowadmin  where ID=:aa";
         $query = $dbh -> prepare($sql);
         $query->bindParam(':aa',$aa,PDO::PARAM_STR);
         $query->execute();

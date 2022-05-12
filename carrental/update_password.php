@@ -12,7 +12,7 @@ else{
     $password=md5($_POST['password']);
     $newpassword=md5($_POST['newpassword']);
     $email=$_SESSION['login'];
-    $sql ="SELECT Password FROM tblusers WHERE EmailId=:email and Password=:password";
+    $sql ="SELECT Password FROM wowusers WHERE EmailId=:email and Password=:password";
     $query= $dbh -> prepare($sql);
     $query-> bindParam(':email', $email, PDO::PARAM_STR);
     $query-> bindParam(':password', $password, PDO::PARAM_STR);
@@ -20,7 +20,7 @@ else{
     $results = $query -> fetchAll(PDO::FETCH_OBJ);
     if($query -> rowCount() > 0)
     {
-      $con="update tblusers set Password=:newpassword where EmailId=:email";
+      $con="update wowusers set Password=:newpassword where EmailId=:email";
       $chngpwd1 = $dbh->prepare($con);
       $chngpwd1-> bindParam(':email', $email, PDO::PARAM_STR);
       $chngpwd1-> bindParam(':newpassword', $newpassword, PDO::PARAM_STR);
@@ -108,7 +108,7 @@ else{
 
     <?php 
     $useremail=$_SESSION['login'];
-    $sql = "SELECT * from tblusers where EmailId=:useremail";
+    $sql = "SELECT * from wowusers where EmailId=:useremail";
     $query = $dbh -> prepare($sql);
     $query -> bindParam(':useremail',$useremail, PDO::PARAM_STR);
     $query->execute();

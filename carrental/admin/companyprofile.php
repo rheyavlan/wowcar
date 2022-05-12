@@ -9,7 +9,7 @@ if(isset($_POST['submit']))
     $regno=$_POST['regno'];
     $country=$_POST['country'];
     $mobno=$_POST['mobilenumber'];
-    $sql="update tblcompany set companyaddress=:companyaddress,companyname=:companyname,companyemail=:companyemail,regno=:regno,companyphone=:mobilenumber,country=:country";
+    $sql="update wowcompany set companyaddress=:companyaddress,companyname=:companyname,companyemail=:companyemail,regno=:regno,companyphone=:mobilenumber,country=:country";
     $query = $dbh->prepare($sql);
     $query->bindParam(':companyaddress',$companyaddress,PDO::PARAM_STR);
     $query->bindParam(':companyemail',$companyemail,PDO::PARAM_STR);
@@ -49,7 +49,7 @@ if(isset($_POST['submit']))
 
                                 <div class="card-body">
                                     <?php
-                                    $sql="SELECT * from  tblcompany ";
+                                    $sql="SELECT * from  wowcompany ";
                                     $query = $dbh -> prepare($sql);
                                     $query->bindParam(':aid',$companyname,PDO::PARAM_STR);
                                     $query->execute();

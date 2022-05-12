@@ -11,7 +11,7 @@ if(isset($_POST['submit']))
   $status=0;
   $vhid=$_GET['vhid'];
   $bookingno=mt_rand(100000000, 999999999);
-  $ret="SELECT * FROM tblbooking where (:fromdate BETWEEN date(FromDate) and date(ToDate) || :todate BETWEEN date(FromDate) and date(ToDate) || date(FromDate) BETWEEN :fromdate and :todate) and VehicleId=:vhid";
+  $ret="SELECT * FROM wowbooking where (:fromdate BETWEEN date(FromDate) and date(ToDate) || :todate BETWEEN date(FromDate) and date(ToDate) || date(FromDate) BETWEEN :fromdate and :todate) and VehicleId=:vhid";
   $query1 = $dbh -> prepare($ret);
   $query1->bindParam(':vhid',$vhid, PDO::PARAM_STR);
   $query1->bindParam(':fromdate',$fromdate,PDO::PARAM_STR);
@@ -22,7 +22,7 @@ if(isset($_POST['submit']))
   if($query1->rowCount()==0)
   {
 
-    $sql="INSERT INTO  tblbooking(userEmail,VehicleId,FromDate,ToDate,pick_id,drop_id,message,Status,BookingNumber) VALUES(:useremail,:vhid,:fromdate,:todate,:pick_id,:drop_id,:message,:status,:bookingno)";
+    $sql="INSERT INTO  wowbooking(userEmail,VehicleId,FromDate,ToDate,pick_id,drop_id,message,Status,BookingNumber) VALUES(:useremail,:vhid,:fromdate,:todate,:pick_id,:drop_id,:message,:status,:bookingno)";
     $query = $dbh->prepare($sql);
     $query->bindParam(':useremail',$useremail,PDO::PARAM_STR);
     $query->bindParam(':vhid',$vhid,PDO::PARAM_STR);
@@ -106,7 +106,7 @@ if(isset($_POST['submit']))
           </div>
           <?php 
           $vhid=intval($_GET['vhid']);
-          $sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblvehicles.id=:vhid";
+          $sql = "SELECT wowvehicles.*,wowbrands.BrandName,wowbrands.id as bid  from wowvehicles join wowbrands on wowbrands.id=wowvehicles.VehiclesBrand where wowvehicles.id=:vhid";
           $query = $dbh -> prepare($sql);
           $query->bindParam(':vhid',$vhid, PDO::PARAM_STR);
           $query->execute();
@@ -502,7 +502,7 @@ if(isset($_POST['submit']))
           <div class="row">
             <?php 
             $bid=$_SESSION['brndid'];
-            $sql="SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.veh_odo_lim,tblvehicles.veh_om_fees,tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblvehicles.VehiclesBrand=:bid";
+            $sql="SELECT wowvehicles.VehiclesTitle,wowbrands.BrandName,wowvehicles.PricePerDay,wowvehicles.FuelType,wowvehicles.ModelYear,wowvehicles.veh_odo_lim,wowvehicles.veh_om_fees,wowvehicles.id,wowvehicles.SeatingCapacity,wowvehicles.VehiclesOverview,wowvehicles.Vimage1 from wowvehicles join wowbrands on wowbrands.id=wowvehicles.VehiclesBrand where wowvehicles.VehiclesBrand=:bid";
             $query = $dbh -> prepare($sql);
             $query->bindParam(':bid',$bid, PDO::PARAM_STR);
             $query->execute();
