@@ -7712,7 +7712,7 @@ jQuery.each( [ "radio", "checkbox" ], function() {
 // Return jQuery for attributes-only inclusion
 
 
-var rfocusMorph = /^(?:focusinfocus|focusoutblur)$/;
+var rfocusMorph = /^(?:focusinfocus|focusouwowur)$/;
 
 jQuery.extend( jQuery.event, {
 

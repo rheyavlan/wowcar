@@ -70,7 +70,7 @@ if(!empty($_POST["fullname"])) {
 if(!empty($_POST["code"])) {
   $bidname= $_POST["code"];
   
-  $sql ="SELECT Code FROM tblbid WHERE Code=:bidname";
+  $sql ="SELECT Code FROM wowbid WHERE Code=:bidname";
   $query= $dbh -> prepare($sql);
   $query-> bindParam(':bidname', $bidname, PDO::PARAM_STR);
   $query-> execute();
